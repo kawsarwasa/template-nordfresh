@@ -155,7 +155,6 @@
           <div class="store-category">${categoryName(p.category)}</div>
           <h3><a href="product.html?id=${encodeURIComponent(p.id)}">${p.name}</a></h3>
           <div class="card-unit">${p.unit}</div>
-          <div class="card-review">${icon('star')} ${p.rating.toFixed(1)} <span>(${p.reviews})</span></div>
           <div class="store-card-bottom">
             <div class="store-price"><strong>${money(p.price)}</strong>${p.old ? `<del>${money(p.old)}</del>` : ''}</div>
             <button type="button" data-add="${p.id}" class="store-add" aria-label="Add ${p.name} to cart">${icon('plus')}<span>Add</span></button>
@@ -229,6 +228,7 @@
     if(!code){
       couponDiscount = 0;
       couponCode = '';
+      renderCart();
       $('#couponNote').textContent = 'Enter a coupon code to apply discount.';
       return;
     }
@@ -240,6 +240,7 @@
     } else {
       couponDiscount = 0;
       couponCode = '';
+      renderCart();
       $('#couponNote').textContent = 'This demo code is not available. Try FRESH80.';
       notify('Invalid coupon code');
     }

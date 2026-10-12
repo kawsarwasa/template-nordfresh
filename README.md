@@ -43,3 +43,11 @@ The Cart page uses demo pricing, sample delivery charges, and frontend-only coup
 ## Demo limitations
 
 Product names, prices, stock, ratings, promotions and delivery claims are **illustrative**, not real-time or independently verified. Account, checkout, tracking, user-submitted reviews, subscriptions and social links are placeholders; no purchases or payments are performed. LocalStorage availability depends on the browser's privacy/file permissions. Replace demo illustration assets with licensed real product photography, connect backend endpoints, and validate product claims before publishing a commercial store.
+
+## Cart layout update (reference-matched)
+
+- `cart.html`, `cart.css`, and `cart.js` implement the approved reference layout with shared NordFresh header/footer unchanged.
+- `assets/cart-delivery-truck.svg` provides a lightweight delivery illustration.
+- The Cart reads the existing `nordfresh-demo-cart` localStorage key; it never inserts sample orders automatically.
+- Product prices and free delivery (Rs. 2,000 threshold) use the shared catalog demo data. Coupons FRESH80/NORD50/WELCOME are frontend demo only.
+- Checkout remains a placeholder and does not process orders or payment.

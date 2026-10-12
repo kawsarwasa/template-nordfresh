@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 118" role="img" aria-label="NordFresh grocery delivery truck">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M27 83q-12-15-8-36M28 66C10 57 5 45 8 33c18 2 30 11 30 27M23 49C18 31 23 19 33 13c11 17 9 33 0 44M33 84c4-22 16-34 29-36-1 21-10 32-29 36" fill="#85bc85" stroke="#4c9657" stroke-width="2"/>
+<path d="M40 94V67h66v27H40Z" fill="#317f45" stroke="#317f45" stroke-width="3"/>
+<path d="M106 94V76h20l16 18H106Z" fill="#499b52" stroke="#317f45" stroke-width="3"/>
+<path d="M121 77v11h15l-10-11h-5" fill="#e6f5e5" stroke="#317f45" stroke-width="2"/>
+<rect x="47" y="73" width="42" height="17" rx="3" fill="#d1e9ce" stroke="none"/>
+<path d="M62 86c6-9 11-13 18-13-2 11-8 16-18 13Z" fill="#468e53" stroke="none"/><path d="M57 85c-4-10-4-16 1-21 9 8 9 15 4 21" fill="#62a663" stroke="none"/>
+<circle cx="61" cy="94" r="9" fill="#254b33" stroke="#d9eadb" stroke-width="3"/><circle cx="119" cy="94" r="9" fill="#254b33" stroke="#d9eadb" stroke-width="3"/>
+<path d="M30 103h125" stroke="#94c494" stroke-width="2" stroke-dasharray="5 7"/>
+</g></svg>
