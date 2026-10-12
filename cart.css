@@ -7,3 +7,45 @@ body[data-page='cart']{background:#fbfdfb}
 @media(max-width:980px){.cart-hero-inner{grid-template-columns:1fr;min-height:auto}.cart-hero-copy{padding:26px 26px 0}.cart-hero-copy h1{font-size:46px}.cart-hero-copy p{font-size:17px}.cart-hero-media{min-height:210px;padding:0 18px 8px}.cart-hero-media img{max-width:100%}.cart-hero-badge{right:24px;top:44%;font-size:22px}.cart-layout{grid-template-columns:1fr}.summary-stack{position:static}.cart-recommend-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.cart-bottom-benefits{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){body[data-page='cart'] .wrap{width:calc(100% - 28px)}.cart-breadcrumbs{padding:16px 0 12px}.cart-hero{border-radius:0 0 16px 16px}.cart-hero-copy{padding:22px 18px 0}.cart-hero-copy h1{font-size:40px;letter-spacing:-1.6px}.cart-hero-copy p{font-size:15px}.cart-hero-media{min-height:180px;padding:6px 12px 4px}.cart-hero-badge{right:14px;font-size:19px}.cart-layout{margin-top:18px;gap:16px}.cart-card,.summary-card,.cart-promo-card{border-radius:16px}.cart-card{padding:12px}.cart-card-header{padding-bottom:12px}.cart-card-header h2{font-size:20px}.cart-items{gap:12px}.cart-item{grid-template-columns:1fr;gap:14px;padding:14px}.cart-item-media{min-height:160px}.cart-item-media img{height:120px}.cart-item-title{font-size:17px}.cart-item-topline{align-items:flex-start}.cart-item-actions{align-items:stretch}.cart-item-total{min-height:0;align-items:flex-start;gap:14px}.cart-item-total strong{font-size:22px}.cart-meta-actions{width:100%;justify-content:space-between}.cart-icon-btn{flex:1;justify-content:center}.summary-card{padding:18px 16px}.summary-card h2{font-size:20px}.summary-line{font-size:15px}.summary-total .total-amount{font-size:22px}.coupon-form{flex-wrap:wrap}.coupon-form button{width:100%}.summary-feature-list{grid-template-columns:1fr;gap:10px}.cart-promo-card{padding:16px}.cart-promo-card-inner{align-items:flex-start}.cart-promo-card h3{font-size:24px}.cart-recommend{margin-top:22px}.cart-recommend .section-title h2{font-size:21px}.cart-recommend-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cart-bottom-benefits{grid-template-columns:1fr;gap:14px;padding:16px;margin-top:20px}}
 @media(max-width:390px){.cart-hero-copy h1{font-size:35px}.cart-hero-badge{font-size:17px}.cart-item-actions{gap:10px}.cart-qty{width:100%;justify-content:space-between}.cart-qty span{width:auto;flex:1}.cart-recommend-grid{grid-template-columns:1fr}}
+
+/* Cart final visual refinement — scoped to cart only; shared NordFresh theme is untouched. */
+body[data-page="cart"] .cart-hero-media{isolation:isolate}
+body[data-page="cart"] .cart-hero-media img{height:250px;max-width:100%;object-fit:contain;object-position:center right;mix-blend-mode:multiply;mask-image:linear-gradient(to right,transparent 0%,#000 15%,#000 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 15%,#000 100%)}
+body[data-page="cart"] .cart-hero-copy{padding-left:12px}
+body[data-page="cart"] .cart-hero-copy h1{font-size:clamp(36px,3.65vw,52px);letter-spacing:-1.9px}
+body[data-page="cart"] .cart-hero-copy p{font-size:15px;max-width:400px;line-height:1.6}
+body[data-page="cart"] .cart-hero-copy .hero-link{margin-top:12px}
+body[data-page="cart"] .cart-hero-leaf{display:none}
+body[data-page="cart"] .cart-layout{grid-template-columns:minmax(0,1.72fr) minmax(330px,0.88fr);gap:18px}
+body[data-page="cart"] .cart-card{padding:18px}
+body[data-page="cart"] .cart-card-header{padding:1px 3px 14px}
+body[data-page="cart"] .cart-item{grid-template-columns:104px minmax(0,1fr) 106px 95px;column-gap:13px;row-gap:10px;min-height:155px;padding:12px;align-items:center}
+body[data-page="cart"] .cart-item-media{min-height:105px;border:0;padding:9px}
+body[data-page="cart"] .cart-item-media img{height:90px;object-fit:contain}
+body[data-page="cart"] .cart-item-category{font-size:12px}
+body[data-page="cart"] .cart-item-title{font-size:15px;margin-top:3px;line-height:1.35}
+body[data-page="cart"] .cart-item-unit{font-size:12px;margin-top:3px}
+body[data-page="cart"] .cart-item-price-row{margin-top:10px;gap:8px}
+body[data-page="cart"] .cart-price{font-size:16px}
+body[data-page="cart"] .cart-price-old{font-size:12px}
+body[data-page="cart"] .cart-save{border:0;background:transparent;color:#71837a;display:inline-flex;gap:5px;align-items:center;font-size:12px;font-weight:800;margin-top:7px;padding:2px 0}
+body[data-page="cart"] .cart-save:hover,body[data-page="cart"] .cart-save[aria-pressed="true"]{color:#397e47}
+body[data-page="cart"] .cart-save .ico{width:15px;height:15px}
+body[data-page="cart"] .cart-qty{min-height:38px;border-radius:9px;justify-self:center}
+body[data-page="cart"] .cart-qty button{width:30px;height:37px}
+body[data-page="cart"] .cart-qty span{width:30px;font-size:14px}
+body[data-page="cart"] .cart-item-total{height:100%;min-height:0;justify-content:center;gap:22px;align-items:flex-end;text-align:right}
+body[data-page="cart"] .cart-item-total strong{font-size:15px;white-space:nowrap}
+body[data-page="cart"] .cart-item-total button{font-size:12px;white-space:nowrap}
+body[data-page="cart"] .summary-line.savings-row,body[data-page="cart"] .summary-line.coupon-row{position:static;z-index:auto;background:transparent;display:flex;padding:0;border-radius:0;line-height:1.4;font-size:15px;color:#476454;font-weight:500}
+body[data-page="cart"] .summary-line.savings-row strong,body[data-page="cart"] .summary-line.coupon-row strong{color:#328a45}
+body[data-page="cart"] .summary-card h2{margin:0 0 18px}
+body[data-page="cart"] .summary-total{align-items:center}
+body[data-page="cart"] .summary-total .total-amount{font-weight:900}
+body[data-page="cart"] #checkoutCart:disabled{background:#91b398;cursor:not-allowed;box-shadow:none;transform:none}
+@media(max-width:1120px){body[data-page="cart"] .cart-layout{grid-template-columns:minmax(0,1.5fr) minmax(300px,0.9fr)}body[data-page="cart"] .cart-item{grid-template-columns:88px minmax(0,1fr) 92px 82px;column-gap:8px}body[data-page="cart"] .cart-item-media{min-height:92px}body[data-page="cart"] .cart-qty button{width:27px}body[data-page="cart"] .cart-qty span{width:25px}body[data-page="cart"] .cart-item-total strong{font-size:13px}}
+@media(max-width:980px){body[data-page="cart"] .cart-layout{grid-template-columns:1fr}body[data-page="cart"] .cart-item{grid-template-columns:105px minmax(0,1fr) 112px 100px;column-gap:14px}body[data-page="cart"] .cart-hero-media img{height:218px}}
+@media(max-width:700px){body[data-page="cart"] .cart-hero-copy{padding:24px 12px 0}body[data-page="cart"] .cart-hero-copy h1{font-size:38px}body[data-page="cart"] .cart-hero-media{min-height:160px}body[data-page="cart"] .cart-hero-media img{height:170px}body[data-page="cart"] .cart-card{padding:12px}body[data-page="cart"] .cart-item{grid-template-columns:80px minmax(0,1fr);grid-template-areas:"photo body" "quantity total";column-gap:11px;row-gap:10px;min-height:0;padding:10px}body[data-page="cart"] .cart-item-media{grid-area:photo;min-height:85px}body[data-page="cart"] .cart-item-media img{height:78px}body[data-page="cart"] .cart-item-body{grid-area:body}body[data-page="cart"] .cart-item-title{font-size:14px}body[data-page="cart"] .cart-item-price-row{margin-top:6px}body[data-page="cart"] .cart-save{margin-top:4px}body[data-page="cart"] .cart-qty{grid-area:quantity;margin:0;justify-self:stretch}body[data-page="cart"] .cart-qty button{width:31px}body[data-page="cart"] .cart-qty span{flex:1}body[data-page="cart"] .cart-item-total{grid-area:total;align-items:flex-end;justify-content:space-between;gap:6px}body[data-page="cart"] .cart-item-total strong{font-size:14px}body[data-page="cart"] .summary-feature-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:390px){body[data-page="cart"] .cart-hero-copy h1{font-size:34px}body[data-page="cart"] .cart-item{grid-template-columns:76px minmax(0,1fr)}body[data-page="cart"] .cart-qty{width:auto}body[data-page="cart"] .cart-qty button{width:27px}body[data-page="cart"] .cart-item-total strong{font-size:13px}body[data-page="cart"] .summary-feature-list{grid-template-columns:1fr}}
+/* Keep recommendations in a compact two-column grid on narrow phones. */
+@media(max-width:390px){body[data-page="cart"] .cart-recommend-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

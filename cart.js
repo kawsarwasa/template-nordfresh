@@ -30,15 +30,7 @@
     $$('#cartCount, #cartCountMobile').forEach(node => node && (node.textContent = total));
   }
 
-  function maybeSeedDemoCart(){
-    const raw = localStorage.getItem('nordfresh-demo-cart');
-    if(raw === null || raw === ''){
-      cart = {'bananas|2':1, tomatoes:2, milk:1, eggs:1};
-      saveCart();
-    }
-  }
-
-  maybeSeedDemoCart();
+  // Never inject example items into a customer's genuinely empty cart.
   syncHeaderCount();
 
   function categoryName(id){
@@ -58,34 +50,28 @@
     const {product, unit, price} = item;
     const lineTotal = price * qty;
     const saved = wishlist.includes(product.id);
+    const hasOriginalPrice = product.old && unit === product.unit && product.old > price;
+    const salePercent = hasOriginalPrice ? Math.round(100 * (product.old - price) / product.old) : 0;
     return `
       <article class="cart-item" data-key="${key}">
         <div class="cart-item-media">
-          ${product.badge ? `<span class="cart-item-badge">${product.badge}% OFF</span>` : ''}
+          ${salePercent ? `<span class="cart-item-badge">-${salePercent}%</span>` : ''}
           <a href="product.html?id=${encodeURIComponent(product.id)}"><img src="${C.storeSrc(product)}" alt="${product.name}" width="250" height="180"></a>
         </div>
         <div class="cart-item-body">
-          <div class="cart-item-topline">
-            <div>
-              <div class="cart-item-category">${categoryName(product.category)}</div>
-              <h3 class="cart-item-title"><a href="product.html?id=${encodeURIComponent(product.id)}">${product.name}</a></h3>
-              <div class="cart-item-unit">${unit}</div>
-            </div>
-          </div>
+          <div class="cart-item-category">${categoryName(product.category)}</div>
+          <h3 class="cart-item-title"><a href="product.html?id=${encodeURIComponent(product.id)}">${product.name}</a></h3>
+          <div class="cart-item-unit">${unit}</div>
           <div class="cart-item-price-row">
             <strong class="cart-price">${money(price)}</strong>
-            ${product.old && unit === product.unit ? `<span class="cart-price-old">${money(product.old)}</span>` : ''}
+            ${hasOriginalPrice ? `<span class="cart-price-old">${money(product.old)}</span>` : ''}
           </div>
-          <div class="cart-item-actions">
-            <div class="cart-qty" aria-label="Quantity selector">
-              <button type="button" data-qty="${key}" data-change="-1" aria-label="Decrease quantity">${icon('minus')}</button>
-              <span>${qty}</span>
-              <button type="button" data-qty="${key}" data-change="1" aria-label="Increase quantity">${icon('plus')}</button>
-            </div>
-            <div class="cart-meta-actions">
-              <button type="button" class="cart-icon-btn" data-wish="${product.id}" aria-pressed="${saved}">${icon('heart')}<span>${saved ? 'Saved' : 'Wishlist'}</span></button>
-            </div>
-          </div>
+          <button type="button" class="cart-save" data-wish="${product.id}" aria-pressed="${saved}" aria-label="${saved ? 'Remove from' : 'Save to'} wishlist">${icon('heart')}<span>${saved ? 'Saved' : 'Wishlist'}</span></button>
+        </div>
+        <div class="cart-qty" aria-label="Quantity for ${product.name}">
+          <button type="button" data-qty="${key}" data-change="-1" aria-label="Decrease ${product.name} quantity">${icon('minus')}</button>
+          <span>${qty}</span>
+          <button type="button" data-qty="${key}" data-change="1" aria-label="Increase ${product.name} quantity">${icon('plus')}</button>
         </div>
         <div class="cart-item-total">
           <strong>${money(lineTotal)}</strong>
@@ -96,22 +82,29 @@
 
   function renderCart(){
     const itemsWrap = $('#cartPageItems');
-    const totalProducts = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+    const units = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
     const keys = Object.keys(cart).filter(key => C.cartItem(key));
-    const subtotal = keys.reduce((sum, key) => sum + C.cartItem(key).price * cart[key], 0);
+    const saleSubtotal = keys.reduce((sum, key) => sum + C.cartItem(key).price * cart[key], 0);
     const savings = keys.reduce((sum, key) => sum + getSavings(key, cart[key]), 0);
-    const delivery = subtotal >= 2000 || subtotal === 0 ? 0 : 100;
-    const discount = couponDiscount; // Sale prices are already reflected in item subtotals.
-    const total = Math.max(0, subtotal + delivery - discount);
+    // List subtotal includes the original price only when its original price is known.
+    // Subtracting savings from that subtotal exactly once avoids double-discounting.
+    const listSubtotal = saleSubtotal + savings;
+    const delivery = saleSubtotal >= 2000 || saleSubtotal === 0 ? 0 : 100;
+    const coupon = Math.min(couponDiscount, saleSubtotal);
+    const total = Math.max(0, listSubtotal - savings - coupon + delivery);
 
-    $('#cartItemCountLabel').textContent = totalProducts;
-    $('#summaryItemCount').textContent = totalProducts;
-    $('#summarySubtotal').textContent = money(subtotal);
-    $('#summaryDelivery').textContent = subtotal === 0 ? 'Rs. 0' : money(delivery);
-    $('#summaryDiscount').textContent = discount ? `- ${money(discount)}` : 'Rs. 0';
+    $('#cartItemCountLabel').textContent = keys.length;
+    $('#summaryItemCount').textContent = units;
+    $('#summarySubtotal').textContent = money(listSubtotal);
+    $('#summaryDelivery').textContent = money(delivery);
+    $('#summaryDiscount').textContent = savings ? `- ${money(savings)}` : money(0);
+    $('#savingsRow').hidden = savings === 0;
+    $('#couponRow').hidden = coupon === 0;
+    $('#summaryCoupon').textContent = `- ${money(coupon)}`;
     $('#summaryTotal').textContent = money(total);
-    $('#couponNote').textContent = couponCode ? `Coupon ${couponCode} applied successfully.` : '';
-
+    $('#couponNote').textContent = couponCode ? `Demo coupon ${couponCode} applied.` : '';
+    $('#checkoutCart').disabled = keys.length === 0;
+    $('#clearCartPage').disabled = keys.length === 0;
     if(!keys.length){
       itemsWrap.innerHTML = `
         <div class="cart-empty-state">
@@ -232,6 +225,7 @@
     e.preventDefault();
     const input = $('#couponInput');
     const code = input.value.trim().toUpperCase();
+    if(!Object.keys(cart).length){notify('Add products before using a coupon.');return;}
     if(!code){
       couponDiscount = 0;
       couponCode = '';
@@ -285,6 +279,10 @@
     }
   });
 
+  window.addEventListener('storage', e => {
+    if(e.key === 'nordfresh-demo-cart'){cart=C.readCart();syncHeaderCount();renderCart();renderRecommendations();}
+    if(e.key === 'nordfresh-demo-wishlist'){wishlist=C.readWishlist();renderCart();renderRecommendations();}
+  });
   renderCart();
   renderRecommendations();
 })();
