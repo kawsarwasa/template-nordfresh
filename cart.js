@@ -245,7 +245,7 @@
   });
 
   $('#checkoutCart').addEventListener('click', () => {
-    notify('Checkout will be connected in the next frontend phase.');
+    location.href = 'checkout.html';
   });
 
   $('#searchForm').addEventListener('submit', (e) => {

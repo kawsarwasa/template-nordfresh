@@ -51,3 +51,14 @@ Product names, prices, stock, ratings, promotions and delivery claims are **illu
 - The Cart reads the existing `nordfresh-demo-cart` localStorage key; it never inserts sample orders automatically.
 - Product prices and free delivery (Rs. 2,000 threshold) use the shared catalog demo data. Coupons FRESH80/NORD50/WELCOME are frontend demo only.
 - Checkout remains a placeholder and does not process orders or payment.
+
+### Checkout Page — Bangladesh frontend demo
+
+Open `checkout.html` after adding products to Cart. Cart's **Proceed to Checkout** opens the new page. The checkout uses the same header, footer and NordFresh green-white design, with new `checkout.css` and `checkout.js` only.
+
+- Required delivery fields: full name, Bangladesh mobile, division, district, thana/upazila and full address; optional email and order comment.
+- Cascading location selects: 8 divisions, 64 districts and upazilas (source: https://github.com/nuhil/bangladesh-geocode , MIT license), with a curated list of Dhaka metropolitan thanas.
+- Demo shipping: Tk 70 for Dhaka City metropolitan thanas selected under Dhaka district, Tk 130 for other selections. For a production shop, validate city-corporation coverage/fees using a verified delivery zone table; a thana name alone does not guarantee eligibility for every address.
+- Payment choices: Mobile Banking, Visa/Mastercard and Cash on Delivery. These controls DO NOT connect to a payment provider or collect card/payment details.
+- Order Summary uses the shared localStorage cart. Original prices are shown as subtotal, product savings deducted exactly once; shipping added when an area is selected. Shipping rates override the older demo free-delivery messages still present elsewhere and those legacy messages should be aligned before going live.
+- **Place Order** validates the form and displays a preview-only status. No real order is placed, no number/receipt generated, and no personal data is sent or persisted by this page.
