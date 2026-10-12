@@ -71,3 +71,9 @@ Open `checkout.html` after adding products to Cart. Cart's **Proceed to Checkout
 - Left Delivery Policy contains the Tk 70 / Tk 130 rules once; the right-side card shows only the customer's selected delivery area and its current fee.
 - Tested five browser viewport widths (320, 390, 768, 1055, 1440px) with no horizontal overflow or JavaScript errors, and checked required fields, valid/invalid Bangladeshi phone, the cascade reset, Dhaka City/Savar/Gazipur charges, and changing/empty carts.
 - The Dhaka City eligibility lookup is a **demo approximation**, not a verified city corporation boundary database. Replace it with a validated deliverable-area table before use for actual customer orders.
+
+
+## Added page
+- `order-success.html` — Order confirmation / success page linked from checkout.
+
+**Demo limitation:** Order Success uses browser localStorage only. It does not create a real order, process mobile banking/card payments, send email/SMS, or provide real order tracking. The checkout flow clears the demo cart only after browser storage accepts the order.

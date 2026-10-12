@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f8fbf7"><meta name="description" content="NordFresh order confirmation page with order details and order summary."><title>Order Confirmed | NordFresh</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link href="styles.css" rel="stylesheet"><link href="storefront.css" rel="stylesheet"><link href="checkout.css" rel="stylesheet"><link href="order-success.css" rel="stylesheet"><script defer src="catalog.js"></script><script defer src="order-success.js"></script></head><body data-page="order-success"><svg aria-hidden="true" class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-leaf" viewbox="0 0 24 24"><path d="M21 3c-9.5 0-16.5 4-16.5 11.5A6.5 6.5 0 0 0 11 21C18.5 21 22 13.5 21 3Z"></path><path d="M3 21c4-7 9-11 15-14"></path></symbol>
+<symbol id="i-search" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7.5"></circle><path d="m16.5 16.5 5 5"></path></symbol>
+<symbol id="i-cart" viewbox="0 0 24 24"><path d="M2.5 3.5h2.7L8 17h11l2.2-10.5H5.9"></path><circle cx="9.5" cy="20.5" r="1.3"></circle><circle cx="18" cy="20.5" r="1.3"></circle></symbol>
+<symbol id="i-user" viewbox="0 0 24 24"><circle cx="12" cy="7" r="4"></circle><path d="M4 21v-2.5a8 8 0 0 1 16 0V21H4Z"></path></symbol>
+<symbol id="i-pin" viewbox="0 0 24 24"><path d="M20 10c0 5-8 11.5-8 11.5S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></symbol>
+<symbol id="i-heart" viewbox="0 0 24 24"><path d="M20.6 5.6a5.2 5.2 0 0 0-7.4 0L12 6.8l-1.2-1.2a5.2 5.2 0 0 0-7.4 7.4L12 21l8.6-8a5.2 5.2 0 0 0 0-7.4Z"></path></symbol>
+<symbol id="i-menu" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></symbol>
+<symbol id="i-truck" viewbox="0 0 24 24"><path d="M1.5 6h13v11h-13zM14.5 10h4l4 4v3h-8z"></path><circle cx="5.5" cy="18.5" r="2"></circle><circle cx="18.5" cy="18.5" r="2"></circle><path d="M17 10v4h5"></path></symbol>
+<symbol id="i-shield" viewbox="0 0 24 24"><path d="M12 2 21 6v6c0 5-3.8 8.5-9 10-5.2-1.5-9-5-9-10V6Z"></path><path d="m8 12 2.5 2.5 5-5"></path></symbol>
+<symbol id="i-credit" viewbox="0 0 24 24"><rect height="15" rx="2" width="20" x="2" y="5"></rect><path d="M2 10h20m-15 5h4"></path></symbol>
+<symbol id="i-headset" viewbox="0 0 24 24"><path d="M4 13V11a8 8 0 0 1 16 0v2M4 13v5h4v-6H5a1 1 0 0 0-1 1ZM20 13v5h-4v-6h3a1 1 0 0 1 1 1ZM20 18c0 3-4 4-8 4"></path></symbol>
+<symbol id="i-mail" viewbox="0 0 24 24"><rect height="15" rx="2" width="20" x="2" y="5"></rect><path d="m2 7 10 8 10-8"></path></symbol>
+<symbol id="i-arrow" viewbox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"></path></symbol>
+<symbol id="i-close" viewbox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"></path></symbol>
+<symbol id="i-trash" viewbox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2m3 0-1 15H6L5 6m5 4v7m4-7v7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></symbol>
+<symbol id="i-minus" viewbox="0 0 24 24"><path d="M5 12h14"></path></symbol>
+<symbol id="i-plus" viewbox="0 0 24 24"><path d="M5 12h14M12 5v14"></path></symbol>
+<symbol id="i-facebook" viewbox="0 0 24 24"><path d="M15 22v-9h3l.5-4H15V6.8c0-1.2.4-1.8 1.9-1.8H19V1.4A23 23 0 0 0 16.2 1C13 1 11 2.9 11 6.5V9H8v4h3v9"></path></symbol>
+<symbol id="i-instagram" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r=".6"></circle></symbol>
+<symbol id="i-play" viewbox="0 0 24 24"><rect height="14" rx="4" width="20" x="2" y="5"></rect><path d="m10 9 5 3-5 3Z"></path></symbol>
+<symbol id="i-chevron" viewbox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></symbol>
+<symbol id="i-star" viewbox="0 0 24 24"><path d="m12 2 3.1 6.3 7 1-5.1 5 1.2 7-6.2-3.3-6.2 3.3 1.2-7-5.1-5 7-1Z"></path></symbol>
+</svg><a href="#main" class="skip-link">Skip to main content</a><div class="announcement">
+<div class="wrap announcement-inner">
+<div class="announce-message"><svg class="ico leaf-solid"><use href="#i-leaf"></use></svg><strong>Fresh groceries delivered across Bangladesh</strong><span class="top-divider">|</span><span class="announcement-extra">Dhaka City ৳70 · Other areas ৳130</span></div>
+<div class="announce-links"><a data-demo="Order tracking" href="#"><svg class="ico small"><use href="#i-pin"></use></svg> Track Order</a><span>|</span><a data-demo="Help centre" href="#">Help</a><span>|</span><button class="text-control" id="cityButton" type="button">Bangladesh <span aria-hidden="true">⌄</span></button></div>
+</div>
+</div><header class="site-header" id="top">
+<div class="wrap main-header">
+<a aria-label="NordFresh home" class="brand" href="index.html">
+<span aria-hidden="true" class="brand-symbol"><svg class="brand-leaf one" viewbox="0 0 44 44"><path d="M4 3C24 3 24 18 22 26 15 27 4 20 4 3Z" fill="#5c9a54"></path><path d="M39 2C27 11 25 21 27 30 39 28 44 15 39 2Z" fill="#347e43"></path><path d="M21 23v18" stroke="#347e43" stroke-linecap="round" stroke-width="3"></path></svg></span>
+<span class="brand-type"><span class="brand-name">Nord<span>Fresh</span></span><small>GOOD FOOD BRIGHTER DAYS</small></span>
+</a>
+<form class="header-search" id="searchForm" role="search"><svg class="ico search-prefix"><use href="#i-search"></use></svg><input aria-label="Search products" autocomplete="off" id="searchInput" placeholder="Search for fruits, vegetables, milk, bread..." type="search"/><button aria-label="Search" type="submit"><svg class="ico"><use href="#i-search"></use></svg></button></form>
+<div class="header-actions">
+<button class="account-action" data-demo="Sign in" type="button"><svg class="ico"><use href="#i-user"></use></svg><span><strong>Sign In</strong><small>Create Account</small></span></button>
+<button class="account-action wishlist-action" id="wishlistButton" type="button"><svg class="ico"><use href="#i-heart"></use></svg><span>Wishlist</span></button>
+<button aria-label="Open shopping cart" class="account-action cart-action" id="openCart" type="button"><span class="cart-icon-wrap"><svg class="ico"><use href="#i-cart"></use></svg><span class="cart-count" id="cartCount">0</span></span><span>Cart</span></button>
+</div>
+</div>
+<nav aria-label="Main navigation" class="nav-strip">
+<div class="wrap nav-content">
+<button aria-expanded="false" class="nav-category" id="categoryToggle" type="button"><svg class="ico"><use href="#i-menu"></use></svg> All Categories</button>
+<div class="nav-links"><a href="shop.html?category=fruits">Fruits &amp; Vegetables</a><a href="shop.html?category=dairy">Dairy &amp; Eggs</a><a href="shop.html?category=bakery">Bakery</a><a href="shop.html?category=seafood">Meat &amp; Seafood</a><a href="shop.html?category=pantry">Pantry</a><a href="shop.html?category=snacks">Snacks</a><a href="shop.html?category=beverages">Beverages</a><a href="shop.html?category=household">Household</a></div>
+<a class="offers-link" href="shop.html?sort=discount"><span class="offer-flower">%</span> Offers</a>
+</div>
+<div class="category-popover wrap" hidden="" id="categoryPopover"><div class="popover-list" id="popoverCategoryList"></div></div>
+</nav>
+</header>
+<main id="main" class="co-main os-main"><div class="wrap os-wrap">
+<nav aria-label="Breadcrumb" class="co-breadcrumb os-breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">›</span><a href="cart.html">Cart</a><span aria-hidden="true">›</span><strong>Order Confirmed</strong></nav>
+<section class="os-hero" aria-labelledby="successHeading">
+  <div class="os-hero-left">
+    <div class="os-confirm-icon" aria-hidden="true"><svg class="ico"><use href="#i-shield"></use></svg></div>
+    <div class="os-hero-copy">
+      <h1 id="successHeading">Order Confirmed</h1>
+      <p>Your order details have been prepared for this checkout preview.</p>
+      <div class="os-order-number">Demo Order Number: <strong id="successOrderNumber">NF-20261012-0001</strong></div>
+      <p class="os-demo-disclaimer" role="note">Demo preview only. No real order is submitted and no payment is collected.</p>
+    </div>
+  </div>
+  <div class="os-hero-art" aria-hidden="true">
+    <div class="os-skyline"></div>
+    <div class="os-truck-block">
+      <div class="os-truck-card">NordFresh</div>
+      <div class="os-truck">
+        <span class="os-truck-cabin"></span>
+        <span class="os-truck-wheel one"></span>
+        <span class="os-truck-wheel two"></span>
+      </div>
+    </div>
+    <div class="os-hero-message">Good Food.<br>Brighter Days!</div>
+  </div>
+</section>
+<section class="os-layout">
+  <div class="os-left">
+    <section class="co-panel os-card" aria-labelledby="detailsHeading">
+      <div class="os-section-head"><span class="os-section-badge">1</span><div><h2 id="detailsHeading">Order Details</h2><p id="detailsLead">Here are your saved demo order details. No email has been sent.</p></div></div>
+      <div class="os-detail-list">
+        <div class="os-detail-item"><div class="os-detail-icon"><svg class="ico"><use href="#i-user"></use></svg></div><div><strong>Full Name</strong><span id="detailName">John Doe</span></div></div>
+        <div class="os-detail-item"><div class="os-detail-icon"><svg class="ico"><use href="#i-user"></use></svg></div><div><strong>Mobile Number</strong><span id="detailPhone">017XXXXXXXX</span></div></div>
+        <div class="os-detail-item os-payment-item"><div class="os-detail-icon"><svg class="ico"><use href="#i-credit"></use></svg></div><div><strong>Payment Method</strong><span id="detailPayment">Mobile Banking (demo)</span><span class="os-payment-pending" id="detailPaymentStatus">Payment not processed</span></div><div class="os-payment-badge" id="paymentBrandBadge">Mobile Banking</div></div>
+        <div class="os-detail-item os-address-item"><div class="os-detail-icon"><svg class="ico"><use href="#i-pin"></use></svg></div><div><strong>Delivery Address</strong><span id="detailAddress">House 12, Road 4, Block B, Niketon, Gulshan, Dhaka - 1212</span></div><div class="os-address-badge"><strong id="deliveryZoneBadge">Dhaka City</strong><span id="deliveryChargeBadge">Delivery Charge: ৳70</span></div></div>
+        <div class="os-detail-item"><div class="os-detail-icon"><svg class="ico"><use href="#i-mail"></use></svg></div><div><strong>Comment / Special Instructions</strong><span id="detailComment">Please call before delivery.</span></div></div>
+      </div>
+    </section>
+    <section class="co-panel os-card" aria-labelledby="productsHeading">
+      <div class="os-section-head"><span class="os-section-badge os-section-badge-box">✓</span><div><h2 id="productsHeading">Ordered Products <small id="orderedProductsCount">(0 items)</small></h2><p>These are the products included in your order.</p></div></div>
+      <div class="os-products-grid" id="orderedProductsGrid"></div>
+    </section>
+  </div>
+  <aside class="os-right">
+    <section class="co-panel os-card os-summary-panel" aria-labelledby="summaryHeadingSuccess">
+      <div class="os-section-head os-summary-head"><span class="os-section-badge os-section-badge-doc">≡</span><div><h2 id="summaryHeadingSuccess">Order Summary</h2><p>Review of your confirmed items.</p></div></div>
+      <div class="os-summary-list" id="successSummaryList"></div>
+      <div class="os-summary-totals">
+        <div><span>Items Total (Before Discount) · <span id="summaryUnitsSuccess">0</span> units</span><strong id="summaryOriginalSuccess">৳0</strong></div>
+        <div class="os-saving"><span>Product Discount</span><strong id="summarySavingsSuccess">- ৳0</strong></div>
+        <div><span>Delivery Charge (<span id="deliveryTypeInline">Dhaka City</span>)</span><strong id="summaryDeliverySuccess">৳0</strong></div>
+        <div class="os-grand-total"><span><b>Grand Total</b><small>Tax information to be confirmed at delivery</small></span><strong id="summaryGrandSuccess">৳0</strong></div>
+      </div>
+      <div class="os-actions">
+        <a class="os-btn os-btn-primary" href="#" data-demo="Track order">Track Order <svg class="ico"><use href="#i-arrow"></use></svg></a>
+        <a class="os-btn os-btn-secondary" href="shop.html"><svg class="ico"><use href="#i-cart"></use></svg> Continue Shopping</a>
+      </div>
+    </section>
+  </aside>
+</section>
+<section class="co-benefits" aria-label="Benefits"><div><svg aria-hidden="true" class="ico"><use href="#i-truck"></use></svg><span><strong>Fast &amp; Reliable Delivery</strong><small>Fresh to your doorstep</small></span></div><div><svg aria-hidden="true" class="ico"><use href="#i-shield"></use></svg><span><strong>Freshness Guarantee</strong><small>Quality you can trust</small></span></div><div><svg aria-hidden="true" class="ico"><use href="#i-credit"></use></svg><span><strong>Secure Payments</strong><small>Your information is safe</small></span></div><div><svg aria-hidden="true" class="ico"><use href="#i-headset"></use></svg><span><strong>Friendly Support</strong><small>We&apos;re here to help</small></span></div></section>
+</div></main><footer class="site-footer"><div class="wrap footer-main"><div class="footer-about"><a class="brand footer-brand" href="index.html"><span aria-hidden="true" class="brand-symbol"><svg viewbox="0 0 44 44"><path d="M4 3C24 3 24 18 22 26 15 27 4 20 4 3Z" fill="#5c9a54"></path><path d="M39 2C27 11 25 21 27 30 39 28 44 15 39 2Z" fill="#347e43"></path><path d="M21 23v18" stroke="#347e43" stroke-linecap="round" stroke-width="3"></path></svg></span><span class="brand-type"><span class="brand-name">Nord<span>Fresh</span></span><small>GOOD FOOD BRIGHTER DAYS</small></span></a><p>Fresh groceries for healthier homes.<br/>Quality food, a brighter tomorrow.</p><div class="social-links"><a aria-label="Facebook" data-demo="Facebook" href="#"><svg class="ico"><use href="#i-facebook"></use></svg></a><a aria-label="Instagram" data-demo="Instagram" href="#"><svg class="ico"><use href="#i-instagram"></use></svg></a><a aria-label="YouTube" data-demo="YouTube" href="#"><svg class="ico"><use href="#i-play"></use></svg></a></div></div><div class="footer-col"><h3>Shop</h3><a href="shop.html">All Categories</a><a href="shop.html">New Arrivals</a><a href="shop.html">Best Sellers</a><a href="shop.html">Special Offers</a></div><div class="footer-col"><h3>Help</h3><a data-demo="Track order" href="#">Track Order</a><a data-demo="Returns and refunds" href="#">Returns &amp; Refunds</a><a data-demo="FAQs" href="#">FAQs</a><a data-demo="Contact" href="#">Contact Us</a></div><div class="footer-col"><h3>About</h3><a data-demo="Our story" href="#">Our Story</a><a data-demo="Sustainability" href="#">Sustainability</a><a data-demo="Quality promise" href="#">Quality Promise</a><a data-demo="Careers" href="#">Careers</a></div><div class="footer-col footer-app"><h3>Download Our App</h3><p>Shop on the go for a better, fresher you.</p><div class="store-badges"><a data-demo="Google Play" href="#"><span class="badge-play">▶</span><span><small>GET IT ON</small><strong>Google Play</strong></span></a><a data-demo="App Store" href="#"><span class="badge-apple">●</span><span><small>Download on the</small><strong>App Store</strong></span></a></div></div></div><div class="footer-bottom"><div class="wrap"><span>© 2026 NordFresh. All rights reserved.</span><div><a data-demo="Privacy policy" href="#">Privacy Policy</a><span>|</span><a data-demo="Terms of service" href="#">Terms of Service</a><span>|</span><a data-demo="Sitemap" href="#">Sitemap</a></div><span class="footer-tagline">🌿 Good Food. Brighter Days. 🌿</span></div></div></footer><nav aria-label="Quick navigation" class="mobile-bottom-nav"><a href="index.html"><svg class="ico"><use href="#i-leaf"></use></svg><span>Home</span></a><a href="shop.html"><svg class="ico"><use href="#i-menu"></use></svg><span>Shop</span></a><button id="mobileCart" type="button"><svg class="ico"><use href="#i-cart"></use></svg><span>Cart</span></button><button data-demo="Account" type="button"><svg class="ico"><use href="#i-user"></use></svg><span>Account</span></button></nav><div aria-live="polite" class="toast" id="toast" role="status"></div></body></html>

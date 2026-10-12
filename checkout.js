@@ -14,6 +14,7 @@
   const thanaSelect = $('#thana');
   const divisionSelect = $('#division');
   const notice = $('#checkoutStatus');
+  const orderKey = 'nordfresh-demo-last-order';
   const showNotice = (message, error=false) => {notice.textContent=message; notice.classList.toggle('co-error',error)};
   const setOptions = (element,options,placeholder) => {
     element.replaceChildren(new Option(placeholder,''),...options.map(s=>new Option(s,s)));
@@ -110,8 +111,45 @@
     if(!checkForm())return;
     if(s.fee===null){showNotice('Select a valid delivery area.',true);return;}
     const payment=$('[name=payment]:checked').value;
-    // Intentionally no simulated receipt, order number, gateway or backend persistence.
-    showNotice(`Preview validated · ${money(s.total)} · ${payment==='cod'?'Cash on Delivery':payment==='mobile'?'Mobile Banking':'Visa / Mastercard'}. No real order was placed. Backend and payment integration are not connected.`,false);
+    const orderNumber = (() => { const d = new Date(); const y = d.getFullYear(); const m = String(d.getMonth()+1).padStart(2,'0'); const day = String(d.getDate()).padStart(2,'0'); const random = String(Math.floor(Math.random()*9000)+1000); return `NF-${y}${m}${day}-${random}`; })();
+    const lines = s.lines.map(({item, quantity}) => ({ key: item.key, id: item.product.id, name: item.product.name, unit: item.unit, price: item.price, quantity, image: C.storeSrc(item.product) }));
+    const orderData = {
+      orderNumber,
+      createdAt: new Date().toISOString(),
+      payment,
+      customer: {
+        name: $('#customerName').value.trim(),
+        phone: $('#customerPhone').value.trim(),
+        email: $('#customerEmail').value.trim(),
+        division: divisionSelect.value,
+        district: districtSelect.value,
+        thana: thanaSelect.value,
+        address: $('#fullAddress').value.trim(),
+        comment: $('#orderComment').value.trim()
+      },
+      lines,
+      totals: {
+        units: s.lines.reduce((sum, line) => sum + line.quantity, 0),
+        originalTotal: s.originalTotal,
+        savings: s.savings,
+        delivery: s.fee,
+        grandTotal: s.total
+      },
+      delivery: {
+        label: s.fee===70 ? 'Dhaka City Delivery' : 'Delivery Outside Dhaka City',
+        fee: s.fee,
+        zone: s.fee===70 ? 'Dhaka City' : 'Outside Dhaka'
+      }
+    };
+    try {
+      localStorage.setItem(orderKey, JSON.stringify(orderData));
+    } catch (_) {
+      showNotice('Could not save your demo order. Please check browser storage and try again.', true);
+      return;
+    }
+    try { C.writeCart({}); cart = {}; } catch(_) {}
+    showNotice('Demo order details saved in this browser. No real order or payment was submitted. Opening the confirmation preview...', false);
+    setTimeout(() => { location.href = 'order-success.html'; }, 350);
   });
   $('#searchForm').addEventListener('submit',e=>{e.preventDefault();const query=$('#searchInput').value.trim();location.href='shop.html'+(query?'?q='+encodeURIComponent(query):'')});
   $('#wishlistButton').addEventListener('click',()=>location.href='shop.html?wishlist=1');
