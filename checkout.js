@@ -66,9 +66,12 @@
         <div><strong>${safe(item.product.name)}</strong><small>${safe(item.unit)} · Qty: ${quantity}</small></div>
         <strong class="co-line-price">${money(item.price*quantity)}</strong>
       </div>`).join(''):'<div class="co-order-empty">Your cart is empty. <a href="shop.html">Browse fresh groceries</a>.</div>';
-    if(s.fee===null)$('#deliveryExplanation').textContent='Select your address to calculate the delivery charge.';
-    else if(s.fee===70)$('#deliveryExplanation').textContent='Dhaka City delivery area selected · ৳70 fee.';
-    else $('#deliveryExplanation').textContent='Outside Dhaka City delivery area · ৳130 fee.';
+    const area = [thanaSelect.value,districtSelect.value,divisionSelect.value].filter(Boolean);
+    $('#deliveryAreaLabel').textContent = s.fee===null?'Your Delivery Area':(s.fee===70?'Dhaka City Delivery':'Delivery Outside Dhaka City');
+    $('#deliveryExplanation').textContent = s.fee===null
+      ? 'Select Division, District and Thana/Upazila to calculate delivery.'
+      : `${area[0]}${area[1]?`, ${area[1]}`:''}`;
+    $('#deliverySelectedFee').textContent = s.fee===null?'—':money(s.fee);
     place.disabled=s.lines.length===0;
     return s;
   }

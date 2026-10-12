@@ -62,3 +62,12 @@ Open `checkout.html` after adding products to Cart. Cart's **Proceed to Checkout
 - Payment choices: Mobile Banking, Visa/Mastercard and Cash on Delivery. These controls DO NOT connect to a payment provider or collect card/payment details.
 - Order Summary uses the shared localStorage cart. Original prices are shown as subtotal, product savings deducted exactly once; shipping added when an area is selected. Shipping rates override the older demo free-delivery messages still present elsewhere and those legacy messages should be aligned before going live.
 - **Place Order** validates the form and displays a preview-only status. No real order is placed, no number/receipt generated, and no personal data is sent or persisted by this page.
+
+### Checkout refinement (October 2026)
+
+- The original-price total is labelled **Items Total (Before Discount)** to distinguish it from the discounted product total. Product Discount is deducted once; delivery is added separately.
+- Full Address is a full-width, multi-line text area for house, road, area and landmark.
+- Payment methods use lightweight local SVG icons instead of platform-dependent emojis. The payment options remain demo only.
+- Left Delivery Policy contains the Tk 70 / Tk 130 rules once; the right-side card shows only the customer's selected delivery area and its current fee.
+- Tested five browser viewport widths (320, 390, 768, 1055, 1440px) with no horizontal overflow or JavaScript errors, and checked required fields, valid/invalid Bangladeshi phone, the cascade reset, Dhaka City/Savar/Gazipur charges, and changing/empty carts.
+- The Dhaka City eligibility lookup is a **demo approximation**, not a verified city corporation boundary database. Replace it with a validated deliverable-area table before use for actual customer orders.
