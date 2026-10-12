@@ -49,7 +49,6 @@
     if(!item) return '';
     const {product, unit, price} = item;
     const lineTotal = price * qty;
-    const saved = wishlist.includes(product.id);
     const hasOriginalPrice = product.old && unit === product.unit && product.old > price;
     const salePercent = hasOriginalPrice ? Math.round(100 * (product.old - price) / product.old) : 0;
     return `
@@ -66,7 +65,6 @@
             <strong class="cart-price">${money(price)}</strong>
             ${hasOriginalPrice ? `<span class="cart-price-old">${money(product.old)}</span>` : ''}
           </div>
-          <button type="button" class="cart-save" data-wish="${product.id}" aria-pressed="${saved}" aria-label="${saved ? 'Remove from' : 'Save to'} wishlist">${icon('heart')}<span>${saved ? 'Saved' : 'Wishlist'}</span></button>
         </div>
         <div class="cart-qty" aria-label="Quantity for ${product.name}">
           <button type="button" data-qty="${key}" data-change="-1" aria-label="Decrease ${product.name} quantity">${icon('minus')}</button>
@@ -75,7 +73,7 @@
         </div>
         <div class="cart-item-total">
           <strong>${money(lineTotal)}</strong>
-          <button type="button" data-remove="${key}">${icon('close')}<span>Remove</span></button>
+          <button type="button" class="cart-delete" data-remove="${key}" aria-label="Remove ${product.name} from cart" title="Remove ${product.name} from cart">${icon('trash')}</button>
         </div>
       </article>`;
   }
