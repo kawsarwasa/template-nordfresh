@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" role="img" aria-label="Juice demo illustration"><defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fcf8"/><stop offset="1" stop-color="#eff7ee"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#ffdf73"/><stop offset="1" stop-color="#dfa43c"/></linearGradient>
+  <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#88c568"/><stop offset="1" stop-color="#297d42"/></linearGradient>
+  <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffb174"/><stop offset="1" stop-color="#e7784f"/></linearGradient>
+  <filter id="shadow"><feGaussianBlur stdDeviation="7"/></filter></defs>
+  <rect width="480" height="340" rx="24" fill="url(#bg)"/>
+  <circle cx="380" cy="70" r="85" fill="#e2f0df" opacity=".55"/>
+  <ellipse cx="240" cy="290" rx="140" ry="17" fill="#9db69e" opacity=".22" filter="url(#shadow)"/>
+  <g><rect x="190" y="92" width="96" height="183" rx="15" fill="#ffa43e" stroke="#d77b2f" stroke-width="5"/><path d="M190 128H286" stroke="#f57b4d" stroke-width="14"/><rect x="210" y="65" width="55" height="29" rx="8" fill="#efead7"/><rect x="201" y="167" width="74" height="65" rx="8" fill="#fff9e7"/><circle cx="239" cy="199" r="24" fill="#ffc54a" stroke="#ed8f30" stroke-width="5"/><circle cx="239" cy="199" r="17" fill="#ffdf87"/><path d="M239 183V214M224 199H253M228 188L249 210M249 187L228 211" stroke="white" stroke-width="3"/><path d="M247 163Q248 146 269 142" stroke="#4e944e" stroke-width="8" fill="none" stroke-linecap="round"/></g>
+</svg>
