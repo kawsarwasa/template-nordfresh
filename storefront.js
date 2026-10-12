@@ -27,7 +27,7 @@
   function closeCart(){backdrop.classList.remove('open');drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');document.body.classList.remove('no-scroll');setTimeout(()=>{if(!drawer.classList.contains('open'))backdrop.hidden=true},280);previousFocus?.focus()}
   $('#openCart').addEventListener('click',openCart);$('#mobileCart').addEventListener('click',openCart);$('#closeCart').addEventListener('click',closeCart);backdrop.addEventListener('click',closeCart);
   $('#cartItems').addEventListener('click',e=>{const b=e.target.closest('[data-cartkey]');if(!b)return;const key=b.dataset.cartkey;cart[key]=(cart[key]||0)+Number(b.dataset.change);if(cart[key]<=0)delete cart[key];else cart[key]=Math.min(99,cart[key]);C.writeCart(cart);refreshCart()});
-  $('#checkoutButton').addEventListener('click',()=>notify('Checkout will be available in the next frontend phase. No payment is being processed.'));
+  $('#checkoutButton').textContent='View Full Cart';$('#checkoutButton').addEventListener('click',()=>{location.href='cart.html'});
   $('#wishlistButton').addEventListener('click',()=>location.href='shop.html?wishlist=1');
   $('#cityButton').addEventListener('click',()=>notify('Demo delivery area: Karachi.'));
   const popover=$('#categoryPopover');

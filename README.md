@@ -1,14 +1,15 @@
-# NordFresh — Final-polished 3-page frontend
+# NordFresh — Responsive Grocery Store Frontend
 
-This static, responsive customer-facing demo includes **exactly 3 HTML pages**:
+This static, responsive customer-facing demo includes **4 HTML pages**:
 
 - `index.html` — Home
 - `shop.html` — Shop (multi-select categories, search, price range, sorting, pagination, wishlist)
 - `product.html` — Product Details (approved Option 2 layout, photo gallery, pack sizes, quantity, tabs, related products)
+- `cart.html` — Shopping Cart (reference-inspired layout, quantity controls, coupon demo, order summary, recommendations)
 
 ## How to view
 
-Extract the ZIP without changing the directory structure. Open `index.html` in Chrome, Firefox or Edge. All local assets are included; Nunito Sans is loaded from Google Fonts when an internet connection is available, with a fallback font otherwise. Use the product images/links to move between the three pages.
+Extract the ZIP without changing the directory structure. Open `index.html` in Chrome, Firefox or Edge. All local assets are included; Nunito Sans is loaded from Google Fonts when an internet connection is available, with a fallback font otherwise. Use the product images/links and **View Full Cart** in the cart drawer to move between the pages.
 
 ## Final refinement changes
 
@@ -22,11 +23,11 @@ Extract the ZIP without changing the directory structure. Open `index.html` in C
 - Nutrition Facts tells users to check the original package label; household products show Product Information.
 - Enabled Write a review to reveal the reviews tab, which remains a non-submittable frontend demo.
 - Kept image selection, zoom, dynamic pack/quantity totals, local cart and wishlist.
-- No additional HTML pages or design-demo files are included.
+- Added a fourth HTML page, `cart.html`, matching the existing NordFresh theme and using the shared local demo cart.
 
 ## Verification
 
-Automated Chromium checks across **320px, 390px, 768px, and 1440px** on all three pages found:
+Automated Chromium checks across **320px, 390px, 768px, and 1440px** on the original three pages found:
 
 - No horizontal overflow
 - No computed font sizes below 12px
@@ -34,6 +35,10 @@ Automated Chromium checks across **320px, 390px, 768px, and 1440px** on all thre
 - No broken loaded images
 
 Interactions tested: category multi-select/reset (desktop and mobile), price filter, sorting, wishlist, cart, variant/quantity totals, galleries, tabs, and six related products.
+
+## Cart page
+
+The Cart page uses demo pricing, sample delivery charges, and frontend-only coupon codes. `FRESH80`, `NORD50` and `WELCOME` demonstrate coupon behaviour; no real coupon validation or checkout/payment is implemented. When no cart storage entry exists, the page initialises with a demo basket for visual evaluation. Use **Clear Cart** to remove all items; the empty basket then persists.
 
 ## Demo limitations
 

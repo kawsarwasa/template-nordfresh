@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8fbf7" />
+  <meta name="description" content="Review your NordFresh cart and continue to checkout." />
+  <title>Shopping Cart | NordFresh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="storefront.css" />
+  <link rel="stylesheet" href="cart.css" />
+  <script defer src="catalog.js"></script>
+  <script defer src="cart.js"></script>
+</head>
+<body data-page="cart">
+  <svg aria-hidden="true" class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M21 3c-9.5 0-16.5 4-16.5 11.5A6.5 6.5 0 0 0 11 21C18.5 21 22 13.5 21 3Z"></path><path d="M3 21c4-7 9-11 15-14"></path></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7.5"></circle><path d="m16.5 16.5 5 5"></path></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M2.5 3.5h2.7L8 17h11l2.2-10.5H5.9"></path><circle cx="9.5" cy="20.5" r="1.3"></circle><circle cx="18" cy="20.5" r="1.3"></circle></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"></circle><path d="M4 21v-2.5a8 8 0 0 1 16 0V21H4Z"></path></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11.5-8 11.5S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.6 5.6a5.2 5.2 0 0 0-7.4 0L12 6.8l-1.2-1.2a5.2 5.2 0 0 0-7.4 7.4L12 21l8.6-8a5.2 5.2 0 0 0 0-7.4Z"></path></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1.5 6h13v11h-13zM14.5 10h4l4 4v3h-8z"></path><circle cx="5.5" cy="18.5" r="2"></circle><circle cx="18.5" cy="18.5" r="2"></circle><path d="M17 10v4h5"></path></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 21 6v6c0 5-3.8 8.5-9 10-5.2-1.5-9-5-9-10V6Z"></path><path d="m8 12 2.5 2.5 5-5"></path></symbol>
+    <symbol id="i-credit" viewBox="0 0 24 24"><rect height="15" rx="2" width="20" x="2" y="5"></rect><path d="M2 10h20m-15 5h4"></path></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 13V11a8 8 0 0 1 16 0v2M4 13v5h4v-6H5a1 1 0 0 0-1 1ZM20 13v5h-4v-6h3a1 1 0 0 1 1 1ZM20 18c0 3-4 4-8 4"></path></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect height="15" rx="2" width="20" x="2" y="5"></rect><path d="m2 7 10 8 10-8"></path></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"></path></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"></path></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"></path></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"></path></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M15 22v-9h3l.5-4H15V6.8c0-1.2.4-1.8 1.9-1.8H19V1.4A23 23 0 0 0 16.2 1C13 1 11 2.9 11 6.5V9H8v4h3v9"></path></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r=".6"></circle></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><rect height="14" rx="4" width="20" x="2" y="5"></rect><path d="m10 9 5 3-5 3Z"></path></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 7 1-5.1 5 1.2 7-6.2-3.3-6.2 3.3 1.2-7-5.1-5 7-1Z"></path></symbol>
+  </svg>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="announcement">
+    <div class="wrap announcement-inner">
+      <div class="announce-message"><svg class="ico leaf-solid"><use href="#i-leaf"></use></svg><strong>Free delivery on orders over Rs. 2,000</strong><span class="top-divider">|</span><span class="announcement-extra">Fresh groceries, happier homes</span></div>
+      <div class="announce-links"><a data-demo="Order tracking" href="#"><svg class="ico small"><use href="#i-pin"></use></svg> Track Order</a><span>|</span><a data-demo="Help centre" href="#">Help</a><span>|</span><button class="text-control" id="cityButton" type="button">Karachi <span aria-hidden="true">⌄</span></button></div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="wrap main-header">
+      <a aria-label="NordFresh home" class="brand" href="index.html">
+        <span aria-hidden="true" class="brand-symbol"><svg class="brand-leaf one" viewBox="0 0 44 44"><path d="M4 3C24 3 24 18 22 26 15 27 4 20 4 3Z" fill="#5c9a54"></path><path d="M39 2C27 11 25 21 27 30 39 28 44 15 39 2Z" fill="#347e43"></path><path d="M21 23v18" stroke="#347e43" stroke-linecap="round" stroke-width="3"></path></svg></span>
+        <span class="brand-type"><span class="brand-name">Nord<span>Fresh</span></span><small>GOOD FOOD BRIGHTER DAYS</small></span>
+      </a>
+      <form class="header-search" id="searchForm" role="search"><svg class="ico search-prefix"><use href="#i-search"></use></svg><input aria-label="Search products" autocomplete="off" id="searchInput" placeholder="Search for fruits, vegetables, milk, bread..." type="search" /><button aria-label="Search" type="submit"><svg class="ico"><use href="#i-search"></use></svg></button></form>
+      <div class="header-actions">
+        <button class="account-action" data-demo="Sign in" type="button"><svg class="ico"><use href="#i-user"></use></svg><span><strong>Sign In</strong><small>Create Account</small></span></button>
+        <button class="account-action wishlist-action" id="wishlistButton" type="button"><svg class="ico"><use href="#i-heart"></use></svg><span>Wishlist</span></button>
+        <button aria-label="Open shopping cart" class="account-action cart-action" id="openCart" type="button"><span class="cart-icon-wrap"><svg class="ico"><use href="#i-cart"></use></svg><span class="cart-count" id="cartCount">0</span></span><span>Cart</span></button>
+      </div>
+    </div>
+    <nav aria-label="Main navigation" class="nav-strip">
+      <div class="wrap nav-content">
+        <button aria-expanded="false" class="nav-category" id="categoryToggle" type="button"><svg class="ico"><use href="#i-menu"></use></svg> All Categories</button>
+        <div class="nav-links"><a href="shop.html?category=fruits">Fruits &amp; Vegetables</a><a href="shop.html?category=dairy">Dairy &amp; Eggs</a><a href="shop.html?category=bakery">Bakery</a><a href="shop.html?category=seafood">Meat &amp; Seafood</a><a href="shop.html?category=pantry">Pantry</a><a href="shop.html?category=snacks">Snacks</a><a href="shop.html?category=beverages">Beverages</a><a href="shop.html?category=household">Household</a></div>
+        <a class="offers-link" href="shop.html?sort=discount"><span class="offer-flower">%</span> Offers</a>
+      </div>
+      <div class="category-popover wrap" hidden id="categoryPopover"><div class="popover-list" id="popoverCategoryList"></div></div>
+    </nav>
+  </header>
+
+  <main id="main" class="cart-main">
+    <section class="cart-hero">
+      <div class="wrap">
+        <nav class="cart-breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><svg class="ico"><use href="#i-chevron"></use></svg><span>Shopping Cart</span>
+        </nav>
+      </div>
+      <div class="wrap cart-hero-inner">
+        <div class="cart-hero-copy">
+          <div class="eyebrow">FRESH CART, READY TO GO</div>
+          <h1>Your Cart</h1>
+          <p>Good food is always a good idea. Review your items and proceed to checkout with the same fresh NordFresh theme.</p>
+          <a class="hero-link" href="shop.html">Continue shopping <svg class="ico"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <div class="cart-hero-media">
+          <div class="cart-hero-leaf" aria-hidden="true"></div>
+          <img src="assets/hero-produce.webp" alt="NordFresh grocery bag filled with vegetables and fruits" width="1102" height="556" decoding="async" fetchpriority="high" />
+          <div class="cart-hero-badge">Good<br/>Food<br/>Brighter<br/>Days</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap cart-layout">
+      <section class="cart-card" aria-labelledby="cartItemsHeading">
+        <div class="cart-card-header">
+          <h2 id="cartItemsHeading">Cart Items (<span id="cartItemCountLabel">0</span>)</h2>
+          <button id="clearCartPage" type="button"><svg class="ico"><use href="#i-close"></use></svg> Clear Cart</button>
+        </div>
+        <div class="cart-items" id="cartPageItems"></div>
+      </section>
+
+      <aside class="summary-stack">
+        <section class="summary-card" id="summaryPanel" aria-labelledby="summaryHeading">
+          <h2 id="summaryHeading">Order Summary</h2>
+          <div class="summary-lines">
+            <div class="summary-line"><span>Subtotal (<span id="summaryItemCount">0</span> items)</span><strong id="summarySubtotal">Rs. 0</strong></div>
+            <div class="summary-line muted"><span>Delivery Fee <svg class="ico"><use href="#i-pin"></use></svg></span><strong id="summaryDelivery">Rs. 0</strong></div>
+            <div class="summary-line discount"><span>Discount</span><strong id="summaryDiscount">Rs. 0</strong></div>
+          </div>
+          <div class="summary-total">
+            <div><strong>Total</strong><small>Inclusive of all taxes</small></div>
+            <div class="total-amount" id="summaryTotal">Rs. 0</div>
+          </div>
+          <div class="coupon-title"><svg class="ico"><use href="#i-leaf"></use></svg> Have a coupon code?</div>
+          <form class="coupon-form" id="couponForm">
+            <input id="couponInput" type="text" placeholder="Enter coupon code" aria-label="Coupon code" />
+            <button type="submit">Apply</button>
+          </form>
+          <div class="coupon-note" id="couponNote"></div>
+          <button class="btn btn-primary checkout-btn" id="checkoutCart" type="button">Proceed to Checkout <svg class="ico"><use href="#i-arrow"></use></svg></button>
+          <div class="summary-feature-list">
+            <div class="summary-feature"><svg class="ico"><use href="#i-truck"></use></svg><div><strong>Free delivery</strong><span>On orders over Rs. 2,000</span></div></div>
+            <div class="summary-feature"><svg class="ico"><use href="#i-credit"></use></svg><div><strong>Secure payments</strong><span>Shop with confidence</span></div></div>
+            <div class="summary-feature"><svg class="ico"><use href="#i-shield"></use></svg><div><strong>Fresh guarantee</strong><span>Quality you can trust</span></div></div>
+          </div>
+        </section>
+
+        <section class="cart-promo-card" aria-label="Promotional message">
+          <div class="cart-promo-card-inner">
+            <div class="cart-promo-icon"><svg class="ico"><use href="#i-truck"></use></svg></div>
+            <div>
+              <h3>Fresh groceries to your doorstep.</h3>
+              <p>Fast, reliable and hassle-free delivery across Karachi with the same NordFresh look and feel.</p>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <section class="wrap cart-recommend section" aria-labelledby="recommendHeading">
+      <div class="section-title">
+        <h2 id="recommendHeading">You may also like</h2>
+        <a class="view-all" href="shop.html">View All <svg class="ico"><use href="#i-arrow"></use></svg></a>
+      </div>
+      <div class="cart-recommend-grid" id="cartRecommendations"></div>
+    </section>
+
+    <section class="wrap cart-bottom-benefits" aria-label="Service highlights">
+      <article><svg class="ico"><use href="#i-truck"></use></svg><div><strong>Fast delivery</strong><p>Fresh to your doorstep</p></div></article>
+      <article><svg class="ico"><use href="#i-shield"></use></svg><div><strong>Freshness guarantee</strong><p>Quality you can trust</p></div></article>
+      <article><svg class="ico"><use href="#i-credit"></use></svg><div><strong>Secure payments</strong><p>Shop with confidence</p></div></article>
+      <article><svg class="ico"><use href="#i-headset"></use></svg><div><strong>Friendly support</strong><p>We’re here to help</p></div></article>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-main"><div class="footer-about"><a class="brand footer-brand" href="index.html"><span aria-hidden="true" class="brand-symbol"><svg viewBox="0 0 44 44"><path d="M4 3C24 3 24 18 22 26 15 27 4 20 4 3Z" fill="#5c9a54"></path><path d="M39 2C27 11 25 21 27 30 39 28 44 15 39 2Z" fill="#347e43"></path><path d="M21 23v18" stroke="#347e43" stroke-linecap="round" stroke-width="3"></path></svg></span><span class="brand-type"><span class="brand-name">Nord<span>Fresh</span></span><small>GOOD FOOD BRIGHTER DAYS</small></span></a><p>Fresh groceries for healthier homes.<br />Quality food, a brighter tomorrow.</p><div class="social-links"><a aria-label="Facebook" data-demo="Facebook" href="#"><svg class="ico"><use href="#i-facebook"></use></svg></a><a aria-label="Instagram" data-demo="Instagram" href="#"><svg class="ico"><use href="#i-instagram"></use></svg></a><a aria-label="YouTube" data-demo="YouTube" href="#"><svg class="ico"><use href="#i-play"></use></svg></a></div></div><div class="footer-col"><h3>Shop</h3><a href="shop.html">All Categories</a><a href="shop.html">New Arrivals</a><a href="shop.html">Best Sellers</a><a href="shop.html">Special Offers</a></div><div class="footer-col"><h3>Help</h3><a data-demo="Track order" href="#">Track Order</a><a data-demo="Returns and refunds" href="#">Returns &amp; Refunds</a><a data-demo="FAQs" href="#">FAQs</a><a data-demo="Contact" href="#">Contact Us</a></div><div class="footer-col"><h3>About</h3><a data-demo="Our story" href="#">Our Story</a><a data-demo="Sustainability" href="#">Sustainability</a><a data-demo="Quality promise" href="#">Quality Promise</a><a data-demo="Careers" href="#">Careers</a></div><div class="footer-col footer-app"><h3>Download Our App</h3><p>Shop on the go for a better, fresher you.</p><div class="store-badges"><a data-demo="Google Play" href="#"><span class="badge-play">▶</span><span><small>GET IT ON</small><strong>Google Play</strong></span></a><a data-demo="App Store" href="#"><span class="badge-apple">●</span><span><small>Download on the</small><strong>App Store</strong></span></a></div></div></div><div class="footer-bottom"><div class="wrap"><span>© 2026 NordFresh. All rights reserved.</span><div><a data-demo="Privacy policy" href="#">Privacy Policy</a><span>|</span><a data-demo="Terms of service" href="#">Terms of Service</a><span>|</span><a data-demo="Sitemap" href="#">Sitemap</a></div><span class="footer-tagline">🌿 Good Food. Brighter Days. 🌿</span></div></div></footer>
+
+  <nav aria-label="Quick navigation" class="mobile-bottom-nav"><a href="index.html"><svg class="ico"><use href="#i-leaf"></use></svg><span>Home</span></a><a href="shop.html"><svg class="ico"><use href="#i-menu"></use></svg><span>Shop</span></a><button id="mobileCart" type="button"><svg class="ico"><use href="#i-cart"></use></svg><span>Cart</span></button><button data-demo="Account" type="button"><svg class="ico"><use href="#i-user"></use></svg><span>Account</span></button></nav>
+  <div aria-live="polite" class="toast" id="toast" role="status"></div>
+</body>
+</html>

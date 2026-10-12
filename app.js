@@ -77,7 +77,7 @@ function openCart(){backdrop.hidden=false;requestAnimationFrame(()=>backdrop.cla
 function closeCart(){backdrop.classList.remove('open');drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';setTimeout(()=>{if(!drawer.classList.contains('open'))backdrop.hidden=true},260)}
 $('#openCart').addEventListener('click',openCart);$('#mobileCart').addEventListener('click',openCart);$('#closeCart').addEventListener('click',closeCart);backdrop.addEventListener('click',closeCart);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeCart();if(e.key==='Escape'){categoryPopover.hidden=true;$('#categoryToggle').setAttribute('aria-expanded','false')}});
-$('#checkoutButton').addEventListener('click',()=>showToast('Checkout is a frontend demo. Connect your real checkout backend to accept orders.'));
+$('#checkoutButton').textContent='View Full Cart';$('#checkoutButton').addEventListener('click',()=>{location.href='cart.html'});
 updateCart();
 window.addEventListener('storage',e=>{if(e.key==='nordfresh-demo-cart'){cart=NordFreshCatalog.readCart();updateCart()}});
 // Countdown to midnight in the browser time zone (sample daily-deal UI).
