@@ -8,8 +8,8 @@
   const money = n => '৳' + Number(n || 0).toLocaleString('en-BD', {maximumFractionDigits:0});
   const safe = txt => String(txt ?? '').replace(/[&<>"']/g, x => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
   const demoKey = 'nordfresh-demo-last-order';
-  function paymentLabel(id){return id==='card'?'Visa / Mastercard':id==='cod'?'Cash on Delivery':'Mobile Banking';}
-  function paymentBrand(id){return id==='card'?'Visa / Mastercard':id==='cod'?'Cash on Delivery':'Mobile Banking';}
+  function paymentLabel(id){return id==='card'?'Visa / Mastercard':id==='cod'?'Cash on Delivery':'Mobile Banking (bKash)';}
+  function paymentBrand(id){return id==='card'?'VISA':id==='cod'?'Cash on Delivery':'bKash';}
   function zoneLabel(fee){return Number(fee)===70?'Dhaka City':'Outside Dhaka';}
   function fallbackOrder(){
     const lines = [
@@ -77,7 +77,7 @@
     const payText = paymentLabel(order.payment);
     $('#detailPayment').textContent = payText;
     const brandBadge = $('#paymentBrandBadge'); brandBadge.textContent = paymentBrand(order.payment); brandBadge.className = 'os-payment-badge ' + (order.payment === 'card' ? 'brand-card' : order.payment === 'cod' ? 'brand-cod' : 'brand-bkash');
-    const paymentStatus = $('#detailPaymentStatus'); if(order.payment === 'cod'){ paymentStatus.textContent = 'Pay when you receive your order'; paymentStatus.classList.remove('is-hidden'); } else if(order.payment === 'card'){ paymentStatus.textContent = 'Payment not processed in preview'; paymentStatus.classList.remove('is-hidden'); } else { paymentStatus.textContent = 'Payment not processed in preview'; paymentStatus.classList.remove('is-hidden'); }
+    const paymentStatus = $('#detailPaymentStatus'); paymentStatus.textContent = order.payment === 'cod' ? 'Pay on delivery' : ''; paymentStatus.classList.toggle('is-hidden', order.payment !== 'cod');
     const addressParts = [order.customer?.address, order.customer?.thana, order.customer?.district, order.customer?.division].filter(Boolean);
     $('#detailAddress').textContent = addressParts.join(', ');
     $('#detailComment').textContent = order.customer?.comment?.trim() || 'No special instructions were added.';
@@ -86,7 +86,6 @@
     $('#deliveryChargeBadge').textContent = 'Delivery Charge: ' + money(order.totals?.delivery || order.delivery?.fee || 0);
     $('#deliveryTypeInline').textContent = zone;
     const lines = order.lines || [];
-    $('#orderedProductsCount').textContent = `(${lines.length} items)`;
     $('#summaryUnitsSuccess').textContent = String(order.totals?.units || lines.reduce((sum, line)=>sum + Number(line.quantity || 0),0));
     $('#summaryOriginalSuccess').textContent = money(order.totals?.originalTotal || 0);
     $('#summarySavingsSuccess').textContent = '- ' + money(order.totals?.savings || 0);
@@ -98,18 +97,10 @@
         <div><strong>${safe(line.name)}</strong><small>${safe(line.unit)} · Qty: ${Number(line.quantity || 0)}</small></div>
         <strong class="os-line-price">${money((line.price || 0) * (line.quantity || 0))}</strong>
       </div>`).join('');
-    $('#orderedProductsGrid').innerHTML = lines.map(line => `
-      <article class="os-product-card">
-        <img src="${safe(line.image || (C.byId[line.id] ? C.storeSrc(C.byId[line.id]) : ''))}" alt="${safe(line.name)}" width="180" height="120">
-        <h3>${safe(line.name)}</h3>
-        <div class="os-product-meta">${safe(line.unit)} · Qty: ${Number(line.quantity || 0)}</div>
-        <div class="os-product-price"><strong>${money((line.price || 0) * (line.quantity || 0))}</strong><small>${money(line.price || 0)} each</small></div>
-      </article>`).join('');
     if(!lines.length){
       $('#successSummaryList').innerHTML = '<div class="os-empty-state">No order data found. Please place an order from the checkout page.</div>';
-      $('#orderedProductsGrid').innerHTML = '<div class="os-empty-state">No products to show yet.</div>';
     }
-    $('#detailsLead').textContent = 'Here are your saved checkout details for this preview.';
+    $('#detailsLead').textContent = 'Here are your order details.';
   }
   document.addEventListener('click', e => {
     const demoLink = e.target.closest('[data-demo]');

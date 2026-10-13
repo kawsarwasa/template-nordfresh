@@ -46,3 +46,75 @@ body[data-page="order-success"]{background:#fff;color:var(--text)}
 .os-confirm-check{display:inline-flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:52px;font-weight:900;color:#fff;line-height:1}.os-payment-pending.is-hidden{display:none}.os-summary-head p:empty{display:none}.os-payment-badge.brand-bkash{background:#ffe8f2;color:#d31d74}.os-payment-badge.brand-card{background:#eef4ff;color:#2159b3}.os-payment-badge.brand-cod{background:#eef9f0;color:#2f7e43}
 
 .os-demo-label{display:inline-flex;align-items:center;margin-left:10px;padding:4px 9px;background:#fffdf5;border:1px solid #e9e0b8;border-radius:7px;color:#6c653e;font-size:12px;font-weight:800;vertical-align:middle}.os-payment-pending{font-size:12px!important}@media(max-width:670px){.os-demo-label{margin-left:0;margin-top:7px;display:table}}
+
+/* Final reference-aligned Order Success page. Other NordFresh pages are untouched. */
+body[data-page="order-success"] .os-wrap{max-width:1210px;padding-top:17px;row-gap:12px}
+body[data-page="order-success"] .os-hero{min-height:116px;grid-template-columns:minmax(0,1.24fr) minmax(0,1fr);gap:8px;padding:13px 22px;border-radius:13px;background:linear-gradient(102deg,#eff9f1 0%,#f5fcf5 58%,#eff8f0 100%)}
+body[data-page="order-success"] .os-hero:before{width:120px;height:120px;right:-85px;top:-55px;opacity:.35}
+body[data-page="order-success"] .os-hero:after{width:95px;height:95px;left:-75px;bottom:-64px;opacity:.3}
+body[data-page="order-success"] .os-hero-left{gap:19px;min-width:0;align-self:center}
+body[data-page="order-success"] .os-success-rays{display:grid;place-items:center;width:130px;height:105px;flex:0 0 130px;position:relative;background:repeating-conic-gradient(from -1deg at 50% 50%, transparent 0 25deg,#338e49 26deg 29deg,transparent 30deg 45deg);mask-image:radial-gradient(transparent 0 49px,#000 50px 66px,transparent 67px)}
+body[data-page="order-success"] .os-success-rays:before{content:'';position:absolute;inset:0;z-index:-1}
+body[data-page="order-success"] .os-confirm-icon{width:76px;height:76px;box-shadow:0 0 0 9px #e2f2e6;border:1px solid #d6ecd8;background:#368e45;position:relative;z-index:1;mask-image:none}
+body[data-page="order-success"] .os-confirm-icon:before{display:none}
+body[data-page="order-success"] .os-confirm-check{font-size:47px;font-weight:900}
+body[data-page="order-success"] .os-hero-copy{min-width:0}
+body[data-page="order-success"] .os-hero-copy h1{font-size:33px;letter-spacing:-1.05px;line-height:1.09}
+body[data-page="order-success"] .os-hero-copy p{font-size:15px;line-height:1.32;margin-top:5px;max-width:500px}
+body[data-page="order-success"] .os-order-number{font-size:15px;margin-top:7px;font-weight:700}
+body[data-page="order-success"] .os-order-number strong{font-size:16px;font-weight:900}
+body[data-page="order-success"] .os-hero-art{height:116px;min-height:0;display:block;overflow:visible;align-self:center}
+body[data-page="order-success"] .os-hero-illustration{display:block;width:100%;height:100%;overflow:visible}
+/* detail grid, with same visual emphasis and spacious rows as the reference */
+body[data-page="order-success"] .os-layout{grid-template-columns:minmax(0,1.58fr) minmax(350px,.97fr);gap:14px;align-items:stretch}
+body[data-page="order-success"] .os-left{display:block;min-width:0}
+body[data-page="order-success"] .os-left>.os-card{height:100%;display:flex;flex-direction:column}
+body[data-page="order-success"] .os-card{padding:15px 14px 14px;border-radius:14px;box-shadow:0 4px 20px rgba(25,65,35,.035)}
+body[data-page="order-success"] .os-section-head{margin-bottom:12px;align-items:center;gap:12px}
+body[data-page="order-success"] .os-section-head h2{font-size:19px;letter-spacing:-.4px}
+body[data-page="order-success"] .os-section-head p{font-size:12px;margin-top:3px}
+body[data-page="order-success"] .os-section-badge-doc{background:#eaf6eb;color:#2c853f;border-radius:50%;width:38px;height:38px;flex-basis:38px}
+body[data-page="order-success"] .os-section-badge-doc .ico{width:21px;height:21px}
+body[data-page="order-success"] .os-detail-list{flex:1;grid-template-rows:repeat(5,minmax(72px,1fr));border:1px solid #e7efe8;border-radius:13px}
+body[data-page="order-success"] .os-detail-item{grid-template-columns:34px minmax(0,1fr) auto;gap:11px;padding:12px 12px 12px 14px}
+body[data-page="order-success"] .os-detail-icon{background:transparent;width:29px;height:29px;align-self:center;color:#24763c}
+body[data-page="order-success"] .os-detail-icon .ico{width:23px;height:23px}
+body[data-page="order-success"] .os-detail-item strong{font-size:13px;margin-bottom:1px}
+body[data-page="order-success"] .os-detail-item span{font-size:13px;line-height:1.4}
+body[data-page="order-success"] .os-payment-badge{background:none;border:0;border-radius:0;box-shadow:none;padding:0 10px;color:#d52778;font-size:20px}
+body[data-page="order-success"] .os-payment-badge.brand-bkash{background:none;color:#cf176b}
+body[data-page="order-success"] .os-payment-badge.brand-card{background:none;color:#274fb5}
+body[data-page="order-success"] .os-payment-badge.brand-cod{background:none;color:#2a7b40;font-size:15px}
+body[data-page="order-success"] .os-address-badge{display:flex;flex-direction:row;align-items:center;min-width:140px;gap:8px;padding:11px 12px}
+body[data-page="order-success"] .os-address-badge>.ico{color:#388c4a;width:23px;height:23px}
+body[data-page="order-success"] .os-address-badge strong{font-size:13px}
+body[data-page="order-success"] .os-address-badge span{font-size:12px;white-space:nowrap}
+body[data-page="order-success"] .os-summary-panel{padding:15px 13px 13px}
+body[data-page="order-success"] .os-summary-head{margin-bottom:10px}
+body[data-page="order-success"] .os-summary-line{padding:8px 2px;gap:10px;grid-template-columns:48px minmax(0,1fr) auto;min-height:54px}
+body[data-page="order-success"] .os-summary-line img{width:48px;height:43px;background:#f7faf7}
+body[data-page="order-success"] .os-summary-line strong{font-size:12px}
+body[data-page="order-success"] .os-summary-line small{font-size:12px;margin-top:1px}
+body[data-page="order-success"] .os-summary-line .os-line-price{font-size:14px}
+body[data-page="order-success"] .os-summary-totals{gap:9px;padding-top:12px}
+body[data-page="order-success"] .os-summary-totals>div:not(.os-grand-total){font-size:12px}
+body[data-page="order-success"] .os-summary-totals strong{font-size:13px}
+body[data-page="order-success"] .os-grand-total{padding:12px}
+body[data-page="order-success"] .os-grand-total strong{font-size:22px}
+body[data-page="order-success"] .os-btn{min-height:42px;border-radius:8px;font-size:14px}
+body[data-page="order-success"] .os-actions{gap:7px;margin-top:11px}
+body[data-page="order-success"] .co-benefits{margin:0;padding:15px 18px}
+body[data-page="order-success"] .os-frontend-note{font-size:12px;color:#88968c;text-align:center;line-height:1.35;margin:-3px auto 2px}
+@media(max-width:1000px){body[data-page="order-success"] .os-hero{grid-template-columns:minmax(0,1.2fr) minmax(0,.9fr)}body[data-page="order-success"] .os-hero-illustration{height:100%}body[data-page="order-success"] .os-hero-left{gap:10px}body[data-page="order-success"] .os-success-rays{width:105px;flex-basis:105px}body[data-page="order-success"] .os-hero-copy h1{font-size:29px}}
+@media(max-width:850px){body[data-page="order-success"] .os-layout{grid-template-columns:1fr}body[data-page="order-success"] .os-left>.os-card{height:auto}body[data-page="order-success"] .os-detail-list{grid-template-rows:none}body[data-page="order-success"] .os-detail-item{min-height:67px}}
+@media(max-width:670px){body[data-page="order-success"] .os-wrap{padding-top:12px;row-gap:12px}body[data-page="order-success"] .os-hero{grid-template-columns:1fr;padding:15px 14px 5px;gap:0}body[data-page="order-success"] .os-hero-left{gap:10px}body[data-page="order-success"] .os-success-rays{width:72px;height:75px;flex:0 0 72px;background:none;mask-image:none}body[data-page="order-success"] .os-confirm-icon{width:62px;height:62px;box-shadow:0 0 0 4px #e1f2e5}body[data-page="order-success"] .os-confirm-check{font-size:35px}body[data-page="order-success"] .os-hero-copy h1{font-size:24px;letter-spacing:-.5px}body[data-page="order-success"] .os-hero-copy p{font-size:13px}body[data-page="order-success"] .os-order-number{font-size:12px}body[data-page="order-success"] .os-order-number strong{font-size:13px}body[data-page="order-success"] .os-hero-art{height:103px;margin-top:2px}body[data-page="order-success"] .os-section-head{margin-bottom:12px}body[data-page="order-success"] .os-detail-item{grid-template-columns:24px minmax(0,1fr);gap:9px;padding:11px 9px;min-height:66px}body[data-page="order-success"] .os-detail-icon{width:24px;height:24px}body[data-page="order-success"] .os-detail-icon .ico{width:20px;height:20px}body[data-page="order-success"] .os-address-badge,body[data-page="order-success"] .os-payment-badge{grid-column:2;margin:4px 0 0}body[data-page="order-success"] .os-address-badge{min-width:0;max-width:max-content;padding:8px 9px}body[data-page="order-success"] .os-summary-panel{padding:14px 12px}body[data-page="order-success"] .os-summary-totals>div:not(.os-grand-total){font-size:12px}}
+@media(max-width:360px){body[data-page="order-success"] .os-hero-illustration{height:91px}body[data-page="order-success"] .os-hero-copy h1{font-size:22px}body[data-page="order-success"] .os-summary-line{grid-template-columns:41px minmax(0,1fr) auto}body[data-page="order-success"] .os-summary-line img{width:41px;height:39px}body[data-page="order-success"] .os-payment-badge{font-size:17px}}
+@media(prefers-reduced-motion:reduce){body[data-page="order-success"] .os-btn{transition:none}}
+/* Keep the checkmark visible: radial mask belongs to the decorative rays only. */
+body[data-page="order-success"] .os-success-rays{background:none;mask-image:none;-webkit-mask-image:none}
+body[data-page="order-success"] .os-success-rays::before{content:'';position:absolute;inset:0;z-index:0;background:repeating-conic-gradient(from -1deg at 50% 50%,transparent 0 25deg,#338e49 26deg 29deg,transparent 30deg 45deg);mask-image:radial-gradient(transparent 0 49px,#000 50px 66px,transparent 67px);-webkit-mask-image:radial-gradient(transparent 0 49px,#000 50px 66px,transparent 67px)}
+body[data-page="order-success"] .os-confirm-icon{z-index:1}
+body[data-page="order-success"] .os-wrap{padding-top:11px}
+body[data-page="order-success"] .os-hero{min-height:115px;padding:8px 20px}
+body[data-page="order-success"] .os-hero-art{height:105px}
+@media(max-width:670px){body[data-page="order-success"] .os-wrap{padding-top:10px}body[data-page="order-success"] .os-hero{padding:13px 13px 5px}body[data-page="order-success"] .os-hero-art{height:103px}}
