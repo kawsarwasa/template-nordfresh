@@ -20,7 +20,9 @@
 <symbol id="i-instagram" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r=".6"></circle></symbol>
 <symbol id="i-play" viewbox="0 0 24 24"><rect height="14" rx="4" width="20" x="2" y="5"></rect><path d="m10 9 5 3-5 3Z"></path></symbol>
 <symbol id="i-chevron" viewbox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></symbol>
-<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.6v3a2 2 0 0 1-2.2 2 19.5 19.5 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6A19.5 19.5 0 0 1 2.3 4 2 2 0 0 1 4.3 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.68 2.79a2 2 0 0 1-.45 2.11L8.3 9.82a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.9.32 1.83.55 2.79.68a2 2 0 0 1 1.57 1.78Z"></path></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></symbol><symbol id="i-star" viewbox="0 0 24 24"><path d="m12 2 3.1 6.3 7 1-5.1 5 1.2 7-6.2-3.3-6.2 3.3 1.2-7-5.1-5 7-1Z"></path></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.6v3a2 2 0 0 1-2.2 2 19.5 19.5 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6A19.5 19.5 0 0 1 2.3 4 2 2 0 0 1 4.3 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.68 2.79a2 2 0 0 1-.45 2.11L8.3 9.82a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.9.32 1.83.55 2.79.68a2 2 0 0 1 1.57 1.78Z"></path></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></symbol>
+<symbol id="i-package" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5Z"></path><path d="M3 7v10l9 5 9-5V7M12 12v10M7.5 4.5l9 5"></path></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3V10Z"></path><path d="M9 20v-7h6v7"></path></symbol><symbol id="i-star" viewbox="0 0 24 24"><path d="m12 2 3.1 6.3 7 1-5.1 5 1.2 7-6.2-3.3-6.2 3.3 1.2-7-5.1-5 7-1Z"></path></symbol>
 </svg><a href="#main" class="skip-link">Skip to main content</a><div class="announcement">
 <div class="wrap announcement-inner">
 <div class="announce-message"><svg class="ico leaf-solid"><use href="#i-leaf"></use></svg><strong>Fresh groceries delivered across Bangladesh</strong><span class="top-divider">|</span><span class="announcement-extra">Dhaka City ৳70 · Other areas ৳130</span></div>
@@ -55,20 +57,20 @@
   <div class="to-layout">
     <section class="to-form-card" aria-label="Find your order">
       <form id="trackForm" novalidate>
-        <div class="to-field"><div class="to-field-icon" aria-hidden="true"><svg class="ico"><use href="#i-cart"></use></svg></div><div class="to-field-control"><label for="trackOrderNumber">Order Number</label><input id="trackOrderNumber" name="orderNumber" required maxlength="36" spellcheck="false" autocomplete="off" placeholder="NF-20261012-0001"></div></div>
+        <div class="to-field"><div class="to-field-icon" aria-hidden="true"><svg class="ico"><use href="#i-package"></use></svg></div><div class="to-field-control"><label for="trackOrderNumber">Order Number</label><input id="trackOrderNumber" name="orderNumber" required maxlength="36" spellcheck="false" autocomplete="off" placeholder="NF-20261012-0001"></div></div>
         <div class="to-field"><div class="to-field-icon" aria-hidden="true"><svg class="ico"><use href="#i-phone"></use></svg></div><div class="to-field-control"><label for="trackPhone">Mobile Number</label><input id="trackPhone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" maxlength="16" placeholder="017XXXXXXXX"></div></div>
         <button class="to-submit" type="submit">Track Order <svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg></button><p id="trackFeedback" class="to-feedback" role="status" aria-live="polite"></p>
       </form>
       <div class="to-help" id="help"><div class="to-help-icon"><svg class="ico" aria-hidden="true"><use href="#i-headset"></use></svg></div><div><strong>Need Help?</strong><p>Can't find your order? Contact our support team.</p><button type="button" id="contactSupport">Contact Us <svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg></button></div></div>
     </section>
     <section class="to-status-card" aria-labelledby="trackingStatusHeading">
-      <div class="to-status-title"><h2 id="trackingStatusHeading">Sample Order Status</h2><span id="trackingStatusNote">Illustrative timeline</span></div>
+      <div class="to-status-title"><h2 id="trackingStatusHeading">Sample Order Status</h2><span id="trackingStatusNote" hidden></span></div>
       <ol class="to-timeline" id="trackTimeline">
         <li class="to-step is-complete"><span class="to-step-dot"><svg class="ico"><use href="#i-check"></use></svg></span><div><strong>Order Placed</strong><small>Example: Oct 12, 2026 · 10:30 AM</small><p>Your order has been received.</p></div></li>
         <li class="to-step is-complete"><span class="to-step-dot"><svg class="ico"><use href="#i-check"></use></svg></span><div><strong>Order Confirmed</strong><small>Example: Oct 12, 2026 · 11:15 AM</small><p>We are preparing your order.</p></div></li>
-        <li class="to-step is-pending"><span class="to-step-dot"></span><div><strong>Processing</strong><p>Your items are being packed.</p></div></li>
-        <li class="to-step is-pending"><span class="to-step-dot"></span><div><strong>Out for Delivery</strong><p>On the way to you.</p></div></li>
-        <li class="to-step is-pending"><span class="to-step-dot"></span><div><strong>Delivered</strong><p>Enjoy your groceries!</p></div></li>
+        <li class="to-step is-pending"><span class="to-step-dot"><svg class="ico" aria-hidden="true"><use href="#i-package"></use></svg></span><div><strong>Processing</strong><p>Your items are being packed.</p></div></li>
+        <li class="to-step is-pending"><span class="to-step-dot"><svg class="ico" aria-hidden="true"><use href="#i-truck"></use></svg></span><div><strong>Out for Delivery</strong><p>On the way to you.</p></div></li>
+        <li class="to-step is-pending"><span class="to-step-dot"><svg class="ico" aria-hidden="true"><use href="#i-home"></use></svg></span><div><strong>Delivered</strong><p>Enjoy your groceries!</p></div></li>
       </ol>
       <img class="to-basket" src="assets/track-grocery-basket.svg" alt="" aria-hidden="true" width="225" height="190" loading="lazy">
       <p id="trackStatusFootnote" class="to-status-footnote">This is an example, not a live shipment.</p>

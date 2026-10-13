@@ -1,1 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 225" role="img" aria-label="Basket of fresh groceries"><defs><linearGradient id="b" x1=".15" y1="0" x2=".95" y2="1"><stop stop-color="#efa84c"/><stop offset="1" stop-color="#d97825"/></linearGradient><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#64b95c"/><stop offset="1" stop-color="#318546"/></linearGradient><linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fa6943"/><stop offset="1" stop-color="#c73828"/></linearGradient></defs><ellipse cx="140" cy="210" rx="111" ry="12" fill="#a6bca1" opacity=".23"/><g stroke="#3f8b3c" stroke-width="3" fill="url(#g)"><path d="M103 122C65 78 55 40 77 16c29 5 47 38 39 96z"/><path d="M111 119C94 65 108 26 134 9c18 31 5 68-17 112z"/><path d="M132 120c5-53 28-86 56-87 4 40-18 72-52 91z"/><path d="M156 127c24-55 52-70 75-53-5 32-38 49-77 53z"/></g><path d="M93 115Q93 60 106 30M112 113Q120 48 133 17" stroke="#256c36" stroke-width="3" fill="none"/><circle cx="74" cy="131" r="33" fill="url(#r)"/><circle cx="73" cy="128" r="24" fill="#f05b37"/><path d="M72 104c-10-14-16-15-23-11 2 10 10 14 21 14M73 105c5-15 14-19 25-16-1 11-10 17-25 16" fill="#388c3c"/><circle cx="139" cy="128" r="36" fill="#e7b341"/><circle cx="137" cy="123" r="29" fill="#ffcc5b"/><path d="M138 94c4-15 13-20 25-18 0 12-11 17-24 18" fill="#388944"/><circle cx="199" cy="131" r="31" fill="url(#r)"/><circle cx="195" cy="126" r="22" fill="#ff754e"/><path d="M196 103c-6-14-2-22 10-27 7 12 5 20-10 27" fill="#46a047"/><path d="M24 135h234l-22 71H47Z" fill="url(#b)" stroke="#b76527" stroke-width="5"/><path d="M51 136l15 69m28-69 6 68m27-68v69m31-69-4 69m34-69-10 69m41-69-17 68" fill="none" stroke="#b96e2a" stroke-width="5" opacity=".68"/><path d="M34 161h211m-202 23h194" stroke="#f7cc85" stroke-width="6" opacity=".88"/><rect x="20" y="130" width="239" height="15" rx="6" fill="#efa449" stroke="#bf772b" stroke-width="3"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 268" role="img" aria-label="Illustrated market basket with leafy greens and fresh vegetables">
+<defs>
+  <linearGradient id="wicker" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7b85c"/><stop offset=".5" stop-color="#dd902f"/><stop offset="1" stop-color="#c5772b"/></linearGradient>
+  <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#80d06d"/><stop offset=".5" stop-color="#3b9b4d"/><stop offset="1" stop-color="#216c3f"/></linearGradient>
+  <linearGradient id="pepper" x1=".2" y1="0" x2="1" y2="1"><stop stop-color="#ff8a55"/><stop offset="1" stop-color="#e24327"/></linearGradient>
+  <linearGradient id="lemon" x1=".1" y1="0" x2="1" y2="1"><stop stop-color="#ffe87d"/><stop offset="1" stop-color="#f5af28"/></linearGradient>
+  <linearGradient id="tomato" x1=".3" y1="0" x2="1" y2="1"><stop stop-color="#fe7850"/><stop offset="1" stop-color="#ca3129"/></linearGradient>
+  <clipPath id="rim"><path d="M34 166H294L266 250H63Z"/></clipPath>
+</defs>
+<ellipse cx="165" cy="254" rx="128" ry="10" fill="#8ba88c" opacity=".17"/>
+<!-- Radiating mixed greens -->
+<g stroke="#2b7a3c" stroke-width="2.1" stroke-linejoin="round">
+  <path d="M147 167Q88 128 91 42Q138 60 150 139Z" fill="url(#leaf)"/><path d="M148 167Q133 86 164 22Q190 83 162 164Z" fill="#65b756"/>
+  <path d="M171 167Q196 62 241 54Q238 136 178 168Z" fill="url(#leaf)"/>
+  <path d="M184 166Q244 100 275 112Q265 160 200 175Z" fill="#3e9e4d"/>
+  <path d="M113 165Q79 87 54 86Q54 143 118 171Z" fill="#79bc56"/>
+  <path d="M159 160Q175 83 215 20Q218 107 170 169Z" fill="#4fbd58"/>
+  <path d="M93 42q37 58 52 115M164 22q-5 75-8 132M240 54q-30 57-61 103M217 20q-24 71-47 144M54 86q38 60 67 83" fill="none" stroke="#c6e8a3" stroke-width="2.4" opacity=".65"/>
+</g>
+<!-- Carrot tops, textured broccolini -->
+<g fill="#347d42" stroke="#296c37" stroke-width="2">
+  <path d="M92 153q-20-57-39-75 31 9 39 42Q83 90 86 69q17 23 15 60 4-41 25-53-9 36-21 71Z"/>
+  <path d="M201 152q10-44 38-64-9 31-24 53 28-22 51-21-23 26-55 37Z"/>
+</g>
+<path d="M105 136q12 25 5 62-10 28-22 12-10-18 1-55Z" fill="#f08a2e" stroke="#e06f27" stroke-width="2"/>
+<path d="M96 155q5 18 5 35" fill="none" stroke="#ffbd6d" stroke-width="2"/>
+<g fill="#418f48" stroke="#2c733f" stroke-width="2.2">
+  <circle cx="51" cy="125" r="17"/><circle cx="67" cy="113" r="20"/><circle cx="79" cy="130" r="18"/>
+  <circle cx="51" cy="145" r="18"/><circle cx="74" cy="146" r="20"/>
+</g>
+<g fill="#8bc879" opacity=".7"><circle cx="53" cy="119" r="5"/><circle cx="70" cy="107" r="7"/><circle cx="43" cy="139" r="4"/><circle cx="78" cy="134" r="5"/></g>
+<!-- Plump peppers and fruit -->
+<path d="M207 168C190 153 194 127 206 115c9-10 13-9 23-3q16-8 25 9c20 35-7 58-22 53-5-3-12-3-25-6Z" fill="url(#pepper)" stroke="#cb4c2c" stroke-width="2.5"/>
+<path d="M227 116q-9-15 4-25m-4 25q-8-12-24-5m24 5q12-12 27-6" stroke="#367b37" stroke-width="5" stroke-linecap="round" fill="none"/>
+<path d="M205 131q-5 15 0 25m27-29q7 16 1 30" stroke="#ffae79" stroke-width="3" stroke-linecap="round" fill="none" opacity=".75"/>
+<ellipse cx="143" cy="161" rx="37" ry="39" fill="url(#lemon)" stroke="#eca72c" stroke-width="2.6" transform="rotate(-15 143 161)"/>
+<path d="M125 138q12-12 26-8" stroke="#fff5b8" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
+<circle cx="268" cy="173" r="27" fill="url(#tomato)" stroke="#c94730" stroke-width="2"/>
+<path d="M265 147c-8-8-17-8-22-3 2 6 10 9 21 7q3-15 15-15 3 10-8 16 10-2 16 6c-7 5-15 4-23-6" fill="#328a3f" stroke="#27793a" stroke-width="1.5"/>
+<path d="M254 160q-6 5-6 14" fill="none" stroke="#ffaf8b" stroke-width="3" stroke-linecap="round"/>
+<!-- Basket handle behind upper rim -->
+<path d="M64 177Q69 98 161 100Q257 99 271 175" fill="none" stroke="#b76a2d" stroke-width="12" stroke-linecap="round" opacity=".8"/>
+<path d="M64 177Q69 98 161 100Q257 99 271 175" fill="none" stroke="#f6c17b" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+<!-- woven basket and slats -->
+<path d="M34 166H294L266 250H63Z" fill="url(#wicker)" stroke="#ad692c" stroke-width="4" stroke-linejoin="round"/>
+<g clip-path="url(#rim)">
+  <path d="M25 185h273M28 212h271M32 237h260" fill="none" stroke="#f8cb84" stroke-width="9" opacity=".9"/>
+  <path d="M32 197h271M33 225h267M33 247h255" fill="none" stroke="#b56b2a" stroke-width="4" opacity=".65"/>
+  <path d="M65 164l17 94m22-94 13 94m25-94 6 96m27-96-2 93m34-93-10 94m37-94-17 94m44-94-25 95" fill="none" stroke="#b87330" stroke-width="7" opacity=".6"/>
+  <path d="M65 164l17 94m22-94 13 94m25-94 6 96m27-96-2 93m34-93-10 94m37-94-17 94m44-94-25 95" fill="none" stroke="#ffd89a" stroke-width="2" opacity=".7"/>
+</g>
+<rect x="27" y="159" width="273" height="17" rx="7" fill="#efad57" stroke="#af6b2f" stroke-width="3"/>
+<path d="M39 163h250" stroke="#ffdb9e" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+</svg>

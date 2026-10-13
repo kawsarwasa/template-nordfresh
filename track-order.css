@@ -46,3 +46,16 @@ body[data-page="track-order"]{background:#fff;color:var(--text)}
 @media(max-width:670px){.to-main .wrap{width:calc(100% - 28px)}.to-heading{padding:0 3px}.to-heading h1{font-size:28px}.to-heading p{font-size:13px}.to-form-card,.to-status-card{border-radius:12px;padding:17px}.to-field{grid-template-columns:47px minmax(0,1fr);gap:9px}.to-field-icon{width:47px;height:53px}.to-field-icon .ico{width:23px;height:23px}.to-field-control label{font-size:13px;margin-bottom:5px}.to-field-control input{height:46px;font-size:13px}.to-submit{min-height:46px;font-size:15px}.to-help{margin-top:18px;padding-top:18px}.to-help-icon{width:43px;height:43px;flex-basis:43px}.to-status-card{min-height:400px}.to-status-title h2{font-size:19px}.to-timeline{max-width:76%;gap:13px}.to-step{grid-template-columns:28px minmax(0,1fr);gap:9px}.to-step-dot{height:27px;width:27px}.to-step:not(:last-child):before{left:12px;top:26px}.to-basket{width:36%;right:-14px;bottom:3px}.to-status-footnote{max-width:80%}}
 @media(max-width:360px){.to-basket{width:33%;opacity:.74}.to-timeline{max-width:83%}.to-status-card{padding:15px}.to-step strong{font-size:13px}.to-status-footnote{max-width:90%}}
 @media(prefers-reduced-motion:reduce){.to-submit,.to-field-control input{transition:none}}
+
+/* Design 3 refinement: pictographic tracking stages and compact rhythm. */
+.to-status-title{margin-bottom:17px}
+.to-status-title span:empty{display:none}
+.to-timeline{gap:12px;max-width:66%}
+.to-step{grid-template-columns:31px minmax(0,1fr);gap:11px;min-height:52px}
+.to-step:not(:last-child):before{bottom:-16px}
+.to-step-dot{transition:background .18s,border-color .18s}
+.to-step.is-pending .to-step-dot{border-width:2px;border-color:#bccdc1;background:#f7fbf7;color:#8da99a}
+.to-step.is-pending .to-step-dot .ico{width:15px;height:15px;stroke-width:2.1}
+.to-basket{right:0;bottom:8px;width:min(37%,228px);filter:drop-shadow(0 5px 6px rgba(51,89,44,.08))}
+@media(max-width:670px){.to-timeline{gap:12px}.to-step{grid-template-columns:28px minmax(0,1fr);gap:9px}.to-step.is-pending .to-step-dot .ico{width:13px;height:13px}.to-basket{width:36%;right:-5px}}
+@media(max-width:360px){.to-basket{width:33%}}

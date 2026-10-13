@@ -19,7 +19,8 @@ function drawTimeline(order){
    const complete=active?i===0:i<2;
    step.classList.toggle('is-complete',complete);step.classList.toggle('is-pending',!complete);
    const dot=step.querySelector('.to-step-dot');dot.replaceChildren();
-   if(complete){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','ico');svg.setAttribute('aria-hidden','true');const use=document.createElementNS('http://www.w3.org/2000/svg','use');use.setAttribute('href','#i-check');svg.append(use);dot.append(svg)}
+   const iconId=complete?'i-check':['i-check','i-check','i-package','i-truck','i-home'][i];
+   {const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','ico');svg.setAttribute('aria-hidden','true');const use=document.createElementNS('http://www.w3.org/2000/svg','use');use.setAttribute('href','#'+iconId);svg.append(use);dot.append(svg)}
    const block=step.querySelector('div');block.querySelector('strong').textContent=stages[i][0];
    let small=block.querySelector('small');if(!small){small=document.createElement('small');block.insertBefore(small,block.querySelector('p'))}
    const when=active&&i===0&&order.createdAt&&Number.isFinite(Date.parse(order.createdAt))?new Intl.DateTimeFormat('en-BD',{dateStyle:'medium',timeStyle:'short'}).format(new Date(order.createdAt)):'';
@@ -28,7 +29,8 @@ function drawTimeline(order){
    block.querySelector('p').textContent=active?(i===0?'Checkout details saved in this browser (demo only).':'No live status update available.'):stages[i][1];
  });
  $('#trackingStatusHeading').textContent=active?'Your Demo Order Status':'Sample Order Status';
- $('#trackingStatusNote').textContent=active?'Order '+order.orderNumber:'Illustrative timeline';
+ $('#trackingStatusNote').textContent=active?'Order '+order.orderNumber:'';
+ $('#trackingStatusNote').hidden=!$('#trackingStatusNote').textContent;
  $('#trackStatusFootnote').textContent=active?'This record is saved only in this browser. Carrier tracking requires a live order system.':'This is an example, not a live shipment.';
 }
 const saved=readSavedOrder();if(saved&&/^[A-Z0-9-]{8,36}$/i.test(saved.orderNumber))orderInput.value=saved.orderNumber;
