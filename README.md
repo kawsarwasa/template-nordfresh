@@ -1,11 +1,16 @@
 # NordFresh — Responsive Grocery Store Frontend
 
-This static, responsive customer-facing demo includes **4 HTML pages**:
+This static, responsive customer-facing demo includes **9 HTML pages**:
 
 - `index.html` — Home
 - `shop.html` — Shop (multi-select categories, search, price range, sorting, pagination, wishlist)
 - `product.html` — Product Details (approved Option 2 layout, photo gallery, pack sizes, quantity, tabs, related products)
 - `cart.html` — Shopping Cart (reference-inspired layout, quantity controls, coupon demo, order summary, recommendations)
+- `checkout.html` — Delivery address and payment selection (frontend demo)
+- `order-success.html` — Demo order confirmation
+- `track-order.html` — Local demo order tracking
+- `wishlist.html` — Saved products and cart actions
+- `login.html` — Sign In / Create Account frontend UI
 
 ## How to view
 
@@ -46,7 +51,7 @@ Product names, prices, stock, ratings, promotions and delivery claims are **illu
 
 ## Cart layout update (reference-matched)
 
-- `cart.html`, `cart.css`, and `cart.js` implement the approved reference layout with shared NordFresh header/footer unchanged.
+- `cart.html`, `css/cart.css`, and `js/cart.js` implement the approved reference layout with shared NordFresh header/footer unchanged.
 - `assets/cart-delivery-truck.svg` provides a lightweight delivery illustration.
 - The Cart reads the existing `nordfresh-demo-cart` localStorage key; it never inserts sample orders automatically.
 - Product prices and free delivery (Rs. 2,000 threshold) use the shared catalog demo data. Coupons FRESH80/NORD50/WELCOME are frontend demo only.
@@ -54,7 +59,7 @@ Product names, prices, stock, ratings, promotions and delivery claims are **illu
 
 ### Checkout Page — Bangladesh frontend demo
 
-Open `checkout.html` after adding products to Cart. Cart's **Proceed to Checkout** opens the new page. The checkout uses the same header, footer and NordFresh green-white design, with new `checkout.css` and `checkout.js` only.
+Open `checkout.html` after adding products to Cart. Cart's **Proceed to Checkout** opens the new page. The checkout uses the same header, footer and NordFresh green-white design, with new `css/checkout.css` and `js/checkout.js` only.
 
 - Required delivery fields: full name, Bangladesh mobile, division, district, thana/upazila and full address; optional email and order comment.
 - Cascading location selects: 8 divisions, 64 districts and upazilas (source: https://github.com/nuhil/bangladesh-geocode , MIT license), with a curated list of Dhaka metropolitan thanas.
@@ -80,7 +85,17 @@ Open `checkout.html` after adding products to Cart. Cart's **Proceed to Checkout
 
 
 ## Wishlist page (Design 2)
-- `wishlist.html`, `wishlist.css`, `wishlist.js` display locally saved favourites as a responsive list.
+- `wishlist.html`, `css/wishlist.css`, `js/wishlist.js` display locally saved favourites as a responsive list.
 - Wishlist heart buttons throughout the site open `wishlist.html`. Saved products remain in the shared browser localStorage wishlist.
 - Features: sorting, out-of-stock filter when real stock flags exist, quantity selectors, individual and bulk removal, Clear All, and Add to Cart.
 - Demo inventory does not provide live stock data; no item is labelled out of stock without an explicit product stock flag.
+
+
+## Source folders
+
+- `css/` — shared and page-specific stylesheets (previously at the project root).
+- `js/` — shared data and page scripts, including `js/bd-locations.js` (previously at the project root).
+- `assets/` — unchanged product images, illustrations, and icons.
+- `*.html` — nine pages remain in the project root.
+
+All HTML stylesheet/script references and relative CSS asset URLs are updated for this layout. JavaScript-generated image paths remain document-relative because the HTML pages still live at the root. To run locally, keep the folders together and open `index.html` or serve the project with a static file server.

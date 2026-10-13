@@ -3,7 +3,7 @@ body[data-page="login"]{background:#fff;color:var(--text)}
 .auth-main{background:linear-gradient(180deg,#f6faf5,#fff 86%);padding:22px 0 36px}
 .auth-wrap{max-width:1250px}
 .auth-stage{min-height:646px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(440px,.95fr);border:1px solid #e4eae1;border-radius:17px;overflow:hidden;background:#f4f8f1;box-shadow:0 15px 44px rgba(31,68,37,.08)}
-.auth-promo{position:relative;min-height:646px;overflow:hidden;background:#eef4ea url("assets/hero-produce.webp") 28% center/auto 100% no-repeat;isolation:isolate}
+.auth-promo{position:relative;min-height:646px;overflow:hidden;background:#eef4ea url("../assets/hero-produce.webp") 28% center/auto 100% no-repeat;isolation:isolate}
 .auth-promo-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(251,253,248,.97) 0%,rgba(251,253,248,.91) 30%,rgba(251,253,248,.55) 57%,rgba(251,253,248,.05) 89%);pointer-events:none}
 .auth-promo-copy{position:relative;padding:68px 32px 120px 43px;z-index:1;max-width:390px}
 .auth-promo-kicker{font-size:12px;letter-spacing:1.55px;font-weight:900;color:#367d45;margin-bottom:14px}
