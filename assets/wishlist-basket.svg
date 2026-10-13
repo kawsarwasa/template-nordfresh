@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 266" role="img" aria-label="Illustration of a basket full of groceries">
+<defs>
+ <linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#167d45"/><stop offset="1" stop-color="#126338"/></linearGradient>
+ <radialGradient id="veg"><stop stop-color="#a0da52"/><stop offset=".75" stop-color="#3c9d4a"/><stop offset="1" stop-color="#267c3c"/></radialGradient>
+ <linearGradient id="pep" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#ffad4a"/><stop offset="1" stop-color="#ed632d"/></linearGradient>
+ <linearGradient id="basket" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#268d49"/><stop offset="1" stop-color="#11713f"/></linearGradient>
+ <filter id="shadow" x="-25%" y="-25%" width="150%" height="170%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<ellipse cx="294" cy="254" rx="159" ry="12" fill="#317d49" opacity=".12" filter="url(#shadow)"/>
+<!-- floating decorative leaves -->
+<g opacity=".7" fill="#78b96f"><path d="M45 48Q20 5 78 8Q85 42 45 48Z"/><path d="M47 47 75 13" stroke="#368b4b" stroke-width="2" fill="none"/><path d="M483 79Q476 35 514 45Q518 78 483 79Z"/><path d="M486 78 512 50" stroke="#368b4b" stroke-width="2" fill="none"/><path d="M92 194Q65 163 107 150Q121 179 92 194Z"/></g>
+<g opacity=".5" fill="#a3d499"><circle cx="110" cy="40" r="6"/><circle cx="465" cy="122" r="4"/><circle cx="420" cy="17" r="5"/></g>
+<!-- tall leafy lettuce and celery -->
+<g transform="translate(170 17)">
+ <path d="M79 173Q25 93 51 17Q75 9 85 44Q111 0 129 10Q151 28 125 79Q175 21 188 54Q195 96 119 165" fill="#348b40"/>
+ <path d="M70 169Q47 95 76 11Q100 30 98 69Q124 17 150 20Q154 70 124 117Q170 53 185 65Q184 111 131 174" fill="#58a947"/>
+ <path d="M91 159Q57 79 86 22Q115 63 117 94Q144 46 167 42Q160 102 126 155" fill="#7fc851"/>
+ <path d="M103 165Q105 97 91 36M114 157Q136 99 156 61M91 155 57 78" stroke="#c4e69c" stroke-width="4" fill="none" opacity=".6"/>
+</g>
+<!-- broccoli florets -->
+<g transform="translate(120 74)">
+ <path d="M75 111L65 63H108L99 111" fill="#77af50"/>
+ <g fill="url(#veg)"><circle cx="51" cy="69" r="34"/><circle cx="80" cy="37" r="39"/><circle cx="114" cy="69" r="32"/><circle cx="94" cy="84" r="33"/><circle cx="52" cy="93" r="23"/></g>
+ <g fill="#a7d367" opacity=".8"><circle cx="53" cy="44" r="7"/><circle cx="72" cy="28" r="6"/><circle cx="96" cy="37" r="9"/><circle cx="118" cy="61" r="5"/><circle cx="66" cy="75" r="6"/></g>
+</g>
+<!-- veggies, pepper and orange -->
+<path d="M341 129Q326 73 358 60Q400 60 394 131Z" fill="#4d9b43"/><path d="M347 127Q359 91 366 70" stroke="#c5ed96" stroke-width="4" fill="none"/>
+<ellipse cx="329" cy="151" rx="41" ry="54" fill="url(#pep)"/><path d="M322 112q10-24 19 0q-12 11-19 0" fill="#277e38"/>
+<circle cx="377" cy="151" r="39" fill="#ef9d34"/><circle cx="365" cy="139" r="14" fill="#ffd26d" opacity=".44"/>
+<path d="M388 126q-7-19 8-23" stroke="#317b42" stroke-width="7" fill="none" stroke-linecap="round"/>
+<ellipse cx="244" cy="174" rx="49" ry="40" fill="#e64835"/><ellipse cx="246" cy="152" rx="25" ry="14" fill="#fa7560" opacity=".54"/>
+<path d="M248 139l-10 14 13-4 10 7-2-16" fill="#2b8636"/>
+<path d="M295 169q-1-33 23-38 22 17 6 51" fill="#f9bd4b"/>
+<!-- basket handle -->
+<path d="M169 201C158 108 395 92 413 196" fill="none" stroke="#127543" stroke-width="19" stroke-linecap="round"/>
+<path d="M170 202C159 113 397 97 413 196" fill="none" stroke="#49a45c" stroke-width="6" opacity=".65"/>
+<!-- rim and basket body -->
+<path d="M135 179Q280 170 435 179L412 250Q278 270 160 249Z" fill="url(#basket)" stroke="#0d663a" stroke-width="3"/>
+<rect x="131" y="174" width="308" height="18" rx="9" fill="#39a053" stroke="#16834a" stroke-width="2"/>
+<g fill="#d4eebd" opacity=".9">
+ <rect x="166" y="200" width="19" height="19" rx="4" transform="rotate(-9 176 210)"/>
+ <rect x="207" y="198" width="19" height="20" rx="4" transform="rotate(-3 215 208)"/>
+ <rect x="251" y="198" width="19" height="20" rx="4"/><rect x="295" y="198" width="19" height="20" rx="4"/><rect x="339" y="198" width="19" height="20" rx="4"/>
+ <rect x="379" y="200" width="18" height="19" rx="4" transform="rotate(7 387 209)"/>
+ <rect x="174" y="227" width="18" height="18" rx="4"/>
+ <rect x="213" y="228" width="19" height="18" rx="4"/><rect x="255" y="229" width="19" height="18" rx="4"/><rect x="297" y="227" width="19" height="18" rx="4"/><rect x="339" y="227" width="19" height="18" rx="4"/><rect x="377" y="224" width="18" height="18" rx="4"/>
+</g>
+<!-- Heart at top-right -->
+<path d="M438 67l-30-29c-31-34-69 17-30 50l60 51 61-52c39-36-1-80-33-49Z" fill="#fffbfa" stroke="#e43248" stroke-width="8" transform="translate(-2 -9) scale(.68) translate(205 0)"/>
+</svg>

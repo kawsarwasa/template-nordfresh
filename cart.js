@@ -254,7 +254,7 @@
     location.href = 'shop.html' + (q ? `?q=${encodeURIComponent(q)}` : '');
   });
 
-  $('#wishlistButton').addEventListener('click', () => location.href = 'shop.html?wishlist=1');
+  $('#wishlistButton').addEventListener('click', () => location.href = 'wishlist.html');
   $('#openCart').addEventListener('click', () => location.href = 'cart.html');
   $('#mobileCart').addEventListener('click', () => location.href = 'cart.html');
   $('#cityButton').addEventListener('click', () => notify('Demo delivery city: Karachi.'));

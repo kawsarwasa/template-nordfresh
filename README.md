@@ -77,3 +77,10 @@ Open `checkout.html` after adding products to Cart. Cart's **Proceed to Checkout
 - `order-success.html` — Order confirmation / success page linked from checkout.
 
 **Demo limitation:** Order Success uses browser localStorage only. It does not create a real order, process mobile banking/card payments, send email/SMS, or provide real order tracking. The checkout flow clears the demo cart only after browser storage accepts the order.
+
+
+## Wishlist page (Design 2)
+- `wishlist.html`, `wishlist.css`, `wishlist.js` display locally saved favourites as a responsive list.
+- Wishlist heart buttons throughout the site open `wishlist.html`. Saved products remain in the shared browser localStorage wishlist.
+- Features: sorting, out-of-stock filter when real stock flags exist, quantity selectors, individual and bulk removal, Clear All, and Add to Cart.
+- Demo inventory does not provide live stock data; no item is labelled out of stock without an explicit product stock flag.

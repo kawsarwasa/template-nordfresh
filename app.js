@@ -58,7 +58,7 @@ const categoryPopover=$('#categoryPopover');
 $('#categoryToggle').addEventListener('click',()=>{const visible=categoryPopover.hidden;categoryPopover.hidden=!visible;$('#categoryToggle').setAttribute('aria-expanded',String(visible))});
 document.addEventListener('pointerdown',e=>{if(!e.target.closest('.nav-strip')){categoryPopover.hidden=true;$('#categoryToggle').setAttribute('aria-expanded','false')}});
 $('#cityButton').addEventListener('click',()=>showToast('Delivery location is Karachi (demo).'));
-$('#wishlistButton').addEventListener('click',()=>window.location.href='shop.html?wishlist=1');
+$('#wishlistButton').addEventListener('click',()=>window.location.href='wishlist.html');
 // Cart with quantity update and browser-side persistence.
 let cart={};try{const existing=JSON.parse(localStorage.getItem('nordfresh-demo-cart')||'{}');if(existing&&typeof existing==='object'&&!Array.isArray(existing))cart=NordFreshCatalog.readCart();}catch(_){cart={}}
 function persistCart(){try{NordFreshCatalog.writeCart(cart)}catch(_){} }

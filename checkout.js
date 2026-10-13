@@ -152,7 +152,7 @@
     setTimeout(() => { location.href = 'order-success.html'; }, 350);
   });
   $('#searchForm').addEventListener('submit',e=>{e.preventDefault();const query=$('#searchInput').value.trim();location.href='shop.html'+(query?'?q='+encodeURIComponent(query):'')});
-  $('#wishlistButton').addEventListener('click',()=>location.href='shop.html?wishlist=1');
+  $('#wishlistButton').addEventListener('click',()=>location.href='wishlist.html');
   $('#openCart').addEventListener('click',()=>location.href='cart.html');
   $('#mobileCart').addEventListener('click',()=>location.href='cart.html');
   $('#cityButton').addEventListener('click',()=>showNotice('Delivery areas are selected in the address form.'));
