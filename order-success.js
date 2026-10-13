@@ -1,6 +1,6 @@
 
 'use strict';
-/* Order success page is a frontend demo. No real order, tracking or email is sent. */
+/* Order success page for frontend flow preview. */
 (() => {
   const C = window.NordFreshCatalog;
   const $ = (sel, root=document) => root.querySelector(sel);
@@ -52,7 +52,7 @@
         grandTotal: saleTotal + 70
       },
       delivery: {label: 'Dhaka City Delivery', fee: 70, zone: 'Dhaka City'},
-      statusNote: 'Frontend demo only.'
+      statusNote: ''
     };
   }
   function readOrder(){
@@ -76,8 +76,8 @@
     $('#detailPhone').textContent = order.customer?.phone || '—';
     const payText = paymentLabel(order.payment);
     $('#detailPayment').textContent = payText;
-    $('#paymentBrandBadge').textContent = paymentBrand(order.payment);
-    $('#detailPaymentStatus').textContent = order.payment === 'cod' ? 'Pay on delivery (demo)' : 'Payment not processed';
+    const brandBadge = $('#paymentBrandBadge'); brandBadge.textContent = paymentBrand(order.payment); brandBadge.className = 'os-payment-badge ' + (order.payment === 'card' ? 'brand-card' : order.payment === 'cod' ? 'brand-cod' : 'brand-bkash');
+    const paymentStatus = $('#detailPaymentStatus'); if(order.payment === 'cod'){ paymentStatus.textContent = 'Pay when you receive your order'; paymentStatus.classList.remove('is-hidden'); } else if(order.payment === 'card'){ paymentStatus.textContent = 'Payment not processed in preview'; paymentStatus.classList.remove('is-hidden'); } else { paymentStatus.textContent = 'Payment not processed in preview'; paymentStatus.classList.remove('is-hidden'); }
     const addressParts = [order.customer?.address, order.customer?.thana, order.customer?.district, order.customer?.division].filter(Boolean);
     $('#detailAddress').textContent = addressParts.join(', ');
     $('#detailComment').textContent = order.customer?.comment?.trim() || 'No special instructions were added.';
@@ -109,7 +109,7 @@
       $('#successSummaryList').innerHTML = '<div class="os-empty-state">No order data found. Please place an order from the checkout page.</div>';
       $('#orderedProductsGrid').innerHTML = '<div class="os-empty-state">No products to show yet.</div>';
     }
-    $('#detailsLead').textContent = 'Here are your saved demo order details. No confirmation email has been sent.';
+    $('#detailsLead').textContent = 'Here are your saved checkout details for this preview.';
   }
   document.addEventListener('click', e => {
     const demoLink = e.target.closest('[data-demo]');
@@ -117,7 +117,7 @@
       e.preventDefault();
       const status = document.getElementById('toast');
       if(status){
-        status.textContent = 'Order tracking is a frontend demo in this template.';
+        status.textContent = 'Track Order page can be connected in the next step.';
         status.classList.add('show');
         clearTimeout(window.__nfToastTimer);
         window.__nfToastTimer = setTimeout(() => status.classList.remove('show'), 2600);

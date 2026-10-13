@@ -41,3 +41,8 @@ body[data-page="order-success"]{background:#fff;color:var(--text)}
 /* Demo checkout disclosure; this is not a real order confirmation. */
 .os-hero-copy .os-demo-disclaimer{display:inline-block;margin-top:12px;padding:7px 11px;background:#fffdf5;border:1px solid #e9e0b8;border-radius:8px;color:#635c3d;font-size:12px;line-height:1.45;font-weight:800}
 .os-payment-pending{margin-top:5px;color:#9a6c2a!important;font-size:12px!important;font-weight:800}
+
+
+.os-confirm-check{display:inline-flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:52px;font-weight:900;color:#fff;line-height:1}.os-payment-pending.is-hidden{display:none}.os-summary-head p:empty{display:none}.os-payment-badge.brand-bkash{background:#ffe8f2;color:#d31d74}.os-payment-badge.brand-card{background:#eef4ff;color:#2159b3}.os-payment-badge.brand-cod{background:#eef9f0;color:#2f7e43}
+
+.os-demo-label{display:inline-flex;align-items:center;margin-left:10px;padding:4px 9px;background:#fffdf5;border:1px solid #e9e0b8;border-radius:7px;color:#6c653e;font-size:12px;font-weight:800;vertical-align:middle}.os-payment-pending{font-size:12px!important}@media(max-width:670px){.os-demo-label{margin-left:0;margin-top:7px;display:table}}
